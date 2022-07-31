@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo_quanlytrungtam.controller.GiaovienController">
+   <children>
+      <AnchorPane layoutX="-4.0" prefHeight="700.0" prefWidth="1000.0">
+         <children>
+            <ScrollPane layoutX="38.0" layoutY="108.0" prefHeight="506.0" prefWidth="923.0" style="-fx-border-color: blue;">
+               <content>
+                  <TableView fx:id="table" prefHeight="495.0" style="-fx-background-color: #AAE4F0; -fx-border-color: green;">
+                     <columns>
+                        <TableColumn fx:id="maGV" prefWidth="100" text="Mã giáo viên" />
+                        <TableColumn fx:id="ten" prefWidth="180" text="Họ và Tên" />
+                        <TableColumn fx:id="ngaysinh" prefWidth="120" text="Ngày sinh" />
+                        <TableColumn fx:id="gioitinh" prefWidth="80" text="Giới tính" />
+                        <TableColumn fx:id="cccd" prefWidth="150" text="Số CMND" />
+                        <TableColumn fx:id="sdt" prefWidth="120" text="Số điện thoại" />
+                        <TableColumn fx:id="gmail" prefWidth="200" text="Gmail" />
+                        <TableColumn fx:id="diachi" prefWidth="250" text="Địa chỉ" />
+                        <TableColumn fx:id="chucvu" prefWidth="120" text="Chức vụ" />
+                        <TableColumn fx:id="luong" prefWidth="150" text="Lương công" />
+                     </columns>
+                  </TableView>
+               </content>
+            </ScrollPane>
+            <Button fx:id="addGV" layoutX="38.0" layoutY="650.0" mnemonicParsing="false" onMouseClicked="#addGV" prefHeight="26.0" prefWidth="126.0" style="-fx-background-color: #4CC7E0;" text="Thêm giáo viên" textFill="WHITE" />
+            <Button fx:id="editGV" layoutX="188.0" layoutY="650.0" mnemonicParsing="false" onMouseClicked="#editGV" prefHeight="26.0" prefWidth="126.0" style="-fx-background-color: #4CC7E0;" text="Chỉnh sửa" textFill="WHITE" />
+            <Button layoutX="347.0" layoutY="650.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="126.0" style="-fx-background-color: #4CC7E0;" text="Xóa giáo viên" textFill="WHITE" />
+            <Button fx:id="home" layoutX="827.0" layoutY="650.0" mnemonicParsing="false" onAction="#gohome" prefHeight="26.0" prefWidth="126.0" style="-fx-background-color: #4CC7E0;" text="Cancel" textFill="WHITE" />
+            <Label alignment="CENTER" layoutX="39.0" layoutY="14.0" prefHeight="30.0" prefWidth="923.0" text="Quản Lý giáo viên" textFill="#f50303">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

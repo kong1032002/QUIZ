@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: grow;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo_quanlytrungtam.controller.Lamdethi">
+   <children>
+      <AnchorPane layoutX="-1.0" layoutY="1.0" prefHeight="700.0" prefWidth="782.0" style="-fx-background-color: #C9C9C9;">
+         <children>
+            <Pagination layoutX="17.0" layoutY="70.0" prefHeight="615.0" prefWidth="736.0" style="-fx-background-color: white;" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="781.0" layoutY="1.0" prefHeight="700.0" prefWidth="218.0" style="-fx-background-color: #E4E4E4;">
+         <children>
+            <TableView layoutX="11.0" layoutY="68.0" prefHeight="615.0" prefWidth="195.0">
+              <columns>
+                <TableColumn prefWidth="47.199951171875" text="Câu" />
+                <TableColumn prefWidth="49.5999755859375" text="Đáp Án" />
+                  <TableColumn prefWidth="47.199951171875" text="Câu" />
+                  <TableColumn prefWidth="49.5999755859375" text="Đáp Án" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
