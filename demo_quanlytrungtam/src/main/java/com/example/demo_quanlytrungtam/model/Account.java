@@ -57,4 +57,15 @@ public class Account {
     public void setTen(String ten) {
         this.ten = ten;
     }
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "tendangnhap='" + tendangnhap + '\'' +
+                ", matkhau='" + matkhau + '\'' +
+                ", sdt=" + sdt +
+                ", gmail='" + gmail + '\'' +
+                ", ten='" + ten + '\'' +
+                '}';
+    }
 }

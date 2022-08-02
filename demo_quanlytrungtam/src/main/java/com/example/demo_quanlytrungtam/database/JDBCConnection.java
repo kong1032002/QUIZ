@@ -1,9 +1,10 @@
 package com.example.demo_quanlytrungtam.database;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
-class JDBCConnection {
-    //Tạo kết nối với MySQL
+public class JDBCConnection {
     public static Connection getJDBCConnection() {
         final String url = "jdbc:mysql://localhost:3306/quanlytrungtam";
         final String user = "root";
@@ -12,9 +13,7 @@ class JDBCConnection {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             return DriverManager.getConnection(url,user, password);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
         return null;

@@ -2,6 +2,7 @@ module com.example.demo_quanlytrungtam {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.sql;
+    requires mysql.connector.java;
 
 
     opens com.example.demo_quanlytrungtam to javafx.fxml;

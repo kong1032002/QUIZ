@@ -48,4 +48,20 @@ public class TracNghiem extends Cauhoi {
         this.dapAn = dapAn;
     }
 
+    @Override
+    public String toString() {
+        return "TracNghiem{" +
+                "id=" + id +
+                ", mon='" + mon + '\'' +
+                ", chuong=" + chuong +
+                ", deBai='" + deBai + '\'' +
+                ", doKho=" + doKho +
+                ", userID=" + userID +
+                ", A='" + A + '\'' +
+                ", B='" + B + '\'' +
+                ", C='" + C + '\'' +
+                ", D='" + D + '\'' +
+                ", dapAn='" + dapAn + '\'' +
+                '}';
+    }
 }
