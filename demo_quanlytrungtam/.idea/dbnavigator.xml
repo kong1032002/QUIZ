@@ -34,13 +34,11 @@
 );]]></console>
     </connection>
     <connection id="45b0359e-bad4-45fa-9619-727e8b970a77">
-      <console name="MySQLConnection" type="STANDARD" schema="mysql" session="Main" />
+      <console name="MySQLConnection" type="STANDARD" schema="quanlytrungtam" session="Main"><![CDATA[drop table taikhoan;]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="45b0359e-bad4-45fa-9619-727e8b970a77" object-ref="schemas/quanlytrungtam/tables/taikhoan" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="f01c91b2-b1f2-4f79-b5d0-1f3d50203f25" />

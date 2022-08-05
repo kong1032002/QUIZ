@@ -3,7 +3,6 @@ package com.example.demo_quanlytrungtam.controller;
 import com.example.demo_quanlytrungtam.Main;
 import com.example.demo_quanlytrungtam.database.JDBCManagement;
 import com.example.demo_quanlytrungtam.model.Account;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -11,11 +10,9 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.List;
 
 public class SignUp {
     @FXML
@@ -35,7 +32,7 @@ public class SignUp {
 
     public boolean checkAcc() {
         for (Account acc: JDBCManagement.getAllAccount()) {
-            if(acc.getTendangnhap().equals(username.getText())) {
+            if(acc.getUsername().equals(username.getText())) {
                 return false;
             }
         }
@@ -66,11 +63,11 @@ public class SignUp {
                     alert.showAndWait();
                 } else {
                     Account acc = new Account();
-                    acc.setTendangnhap(username.getText());
-                    acc.setMatkhau(password.getText());
-                    acc.setTen(name.getText());
-                    acc.setSdt(Integer.parseInt(phone.getText()));
-                    acc.setGmail(gmail.getText());
+                    acc.setUsername(username.getText());
+                    acc.setPassword(password.getText());
+                    acc.setFullName(name.getText());
+                    acc.setPhoneNumber(Integer.parseInt(phone.getText()));
+                    acc.setEmail(gmail.getText());
                     JDBCManagement.addAccount(acc);
                     FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/example/demo_quanlytrungtam/views/viewSignIn.fxml"));
                     Scene scene = null;

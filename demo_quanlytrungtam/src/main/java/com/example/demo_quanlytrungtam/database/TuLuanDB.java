@@ -1,6 +1,5 @@
 package com.example.demo_quanlytrungtam.database;
 
-import com.example.demo_quanlytrungtam.model.TracNghiem;
 import com.example.demo_quanlytrungtam.model.TuLuan;
 
 import java.sql.Connection;
@@ -21,10 +20,10 @@ public class TuLuanDB {
             ResultSet rs = p.executeQuery();
             while(rs.next()) {
                 TuLuan c = new TuLuan();
-                c.setMon(rs.getString("mon"));
-                c.setChuong(rs.getInt("chuong"));
-                c.setDeBai(rs.getString("deBai"));
-                c.setDoKho(rs.getInt("doKho"));
+                c.setSubject(rs.getString("mon"));
+                c.setChapter(rs.getInt("chuong"));
+                c.setQuest(rs.getString("deBai"));
+                c.setDifficult(rs.getInt("doKho"));
                 c.setGoiY(rs.getString("goiY"));
                 list.add(c);
             }
@@ -36,13 +35,15 @@ public class TuLuanDB {
 
     public static void addTracNghiem(TuLuan quest){
         Connection conn = JDBCConnection.getJDBCConnection();
-        String sql = "INSERT INTO tuluan (chuong, deBai, doKho, goiY) VALUES (?, ?, ?, ?)";
+        String sql = "insert into tuluan(mon, chuong , deBai, doKho, goiY)\n" +
+                "values (?, ?, ?, ?, ?);";
         try {
             PreparedStatement p = conn.prepareStatement(sql);
-            p.setInt(1, quest.getChuong());
-            p.setString(2, quest.getDeBai());
-            p.setInt(3, quest.getDoKho());
-            p.setString(4, quest.getGoiY());
+            p.setString(1, quest.getSubject());
+            p.setInt(2, quest.getChapter());
+            p.setString(3, quest.getQuest());
+            p.setInt(4, quest.getDifficult());
+            p.setString(5, quest.getGoiY());
             p.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);

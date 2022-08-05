@@ -31,5 +31,12 @@ public class Main extends Application{
 
     public static void main(String[] args) {
         launch();
+//        Account account = new Account();
+//        account.setTendangnhap("123123");
+//        account.setMatkhau("123");
+//        account.setSdt(1233);
+//        account.setTen("123132");
+//        account.setGmail("123123");
+//        AccountDB.addAccount(account);
     }
 }

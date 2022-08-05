@@ -1,12 +1,7 @@
 package com.example.demo_quanlytrungtam.model;
 
-public class Giaovien {
-    private int id;
-    private String fullname;
-    private String birthday;
-    private String sex;
+public class Giaovien extends Person{
     private int idCardNumber;
-    private int phoneNumber;
     private String email;
     private String address;
     private String role;
@@ -18,30 +13,6 @@ public class Giaovien {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getFullname() {
-        return fullname;
-    }
-
-    public void setFullname(String fullname) {
-        this.fullname = fullname;
-    }
-
-    public String getBirthday() {
-        return birthday;
-    }
-
-    public void setBirthday(String birthday) {
-        this.birthday = birthday;
-    }
-
-    public String getSex() {
-        return sex;
-    }
-
-    public void setSex(String sex) {
-        this.sex = sex;
     }
 
     public int getIdCardNumber() {

@@ -52,10 +52,10 @@ public class TracNghiem extends Cauhoi {
     public String toString() {
         return "TracNghiem{" +
                 "id=" + id +
-                ", mon='" + mon + '\'' +
-                ", chuong=" + chuong +
-                ", deBai='" + deBai + '\'' +
-                ", doKho=" + doKho +
+                ", mon='" + subject + '\'' +
+                ", chuong=" + chapter +
+                ", deBai='" + quest + '\'' +
+                ", doKho=" + difficult +
                 ", userID=" + userID +
                 ", A='" + A + '\'' +
                 ", B='" + B + '\'' +

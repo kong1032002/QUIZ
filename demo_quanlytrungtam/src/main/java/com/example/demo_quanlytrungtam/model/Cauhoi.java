@@ -2,18 +2,18 @@ package com.example.demo_quanlytrungtam.model;
 
 public abstract class Cauhoi {
     protected int id;
-    protected String mon;
-    protected int chuong;
-    protected String deBai;
-    protected int doKho;
+    protected String subject;
+    protected int chapter;
+    protected String quest;
+    protected int difficult;
     protected int userID;
 
-    public String getMon() {
-        return mon;
+    public String getSubject() {
+        return subject;
     }
 
-    public void setMon(String mon) {
-        this.mon = mon;
+    public void setSubject(String subject) {
+        this.subject = subject;
     }
 
     public int getId() {
@@ -24,28 +24,28 @@ public abstract class Cauhoi {
         this.id = id;
     }
 
-    public int getChuong() {
-        return chuong;
+    public int getChapter() {
+        return chapter;
     }
 
-    public void setChuong(int chuong) {
-        this.chuong = chuong;
+    public void setChapter(int chapter) {
+        this.chapter = chapter;
     }
 
-    public String getDeBai() {
-        return deBai;
+    public String getQuest() {
+        return quest;
     }
 
-    public void setDeBai(String deBai) {
-        this.deBai = deBai;
+    public void setQuest(String quest) {
+        this.quest = quest;
     }
 
-    public int getDoKho() {
-        return doKho;
+    public int getDifficult() {
+        return difficult;
     }
 
-    public void setDoKho(int doKho) {
-        this.doKho = doKho;
+    public void setDifficult(int difficult) {
+        this.difficult = difficult;
     }
 
     public int getUserID() {

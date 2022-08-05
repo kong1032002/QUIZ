@@ -6,7 +6,6 @@ import com.example.demo_quanlytrungtam.model.Account;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -14,7 +13,6 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.List;
 
 public class SignIn {
     @FXML
@@ -43,7 +41,7 @@ public class SignIn {
 
     public boolean checkAcc() {
         for (Account acc: JDBCManagement.getAllAccount()) {
-            if(acc.getTendangnhap().equals(username.getText())  && acc.getMatkhau().equals(password.getText())) {
+            if(acc.getUsername().equals(username.getText())  && acc.getPassword().equals(password.getText())) {
                 return true;
             }
         }

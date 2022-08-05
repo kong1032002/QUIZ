@@ -1,21 +1,32 @@
 package com.example.demo_quanlytrungtam.controller;
 
 import com.example.demo_quanlytrungtam.Main;
+import com.example.demo_quanlytrungtam.database.TracNghiemDB;
+import com.example.demo_quanlytrungtam.model.Cauhoi;
+import com.example.demo_quanlytrungtam.model.TracNghiem;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class CauhoiController {
+public class CauhoiController  {
+    @FXML
+    public ListView<TracNghiem> quests;
     @FXML
     Button addCH;
     @FXML
     Button editCH;
     @FXML
     Button cancel;
+
+    public void refresh() {
+        quests.getItems().addAll(TracNghiemDB.getAllQuest());
+    }
 
     public void addCH() {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/example/demo_quanlytrungtam/views/editCH.fxml"));
@@ -29,6 +40,7 @@ public class CauhoiController {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        refresh();
     }
 
     public void editCH() {
@@ -43,6 +55,7 @@ public class CauhoiController {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        refresh();
     }
 
     public void gohome() {
@@ -57,6 +70,7 @@ public class CauhoiController {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+//        refresh();
     }
 
 }

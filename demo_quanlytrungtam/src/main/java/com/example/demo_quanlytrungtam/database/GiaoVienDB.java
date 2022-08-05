@@ -21,11 +21,12 @@ public class GiaoVienDB {
                 giaovien.setAddress(resultSet.getString("diaChi"));
                 giaovien.setBirthday(resultSet.getString("ngaySinh"));
                 giaovien.setEmail(resultSet.getString("email"));
-                giaovien.setFullname(resultSet.getString("hoVaTen"));
+                giaovien.setFirstname(resultSet.getString("Ten"));
+                giaovien.setLastname(resultSet.getString("Ho"));
                 giaovien.setRole(resultSet.getString("chucVu"));
                 giaovien.setSalary(resultSet.getDouble("luong"));
                 giaovien.setId(resultSet.getInt("id"));
-                giaovien.setSex(resultSet.getString("gioiTinh"));
+                giaovien.setGender(resultSet.getString("gioiTinh"));
                 giaovien.setPhoneNumber(resultSet.getInt("soDienThoai"));
                 giaovien.setIdCardNumber(resultSet.getInt("soCMND"));
                 giaovien.setId(resultSet.getInt("id"));
