@@ -10,4 +10,17 @@ public class TuLuan extends Cauhoi {
     public void setGoiY(String goiY) {
         this.goiY = goiY;
     }
+
+    @Override
+    public String toString() {
+        return "TuLuan{" +
+                "id=" + id +
+                ", subject='" + subject + '\'' +
+                ", chapter=" + chapter +
+                ", quest='" + quest + '\'' +
+                ", difficult=" + difficult +
+                ", userID=" + userID +
+                ", goiY='" + goiY + '\'' +
+                '}';
+    }
 }

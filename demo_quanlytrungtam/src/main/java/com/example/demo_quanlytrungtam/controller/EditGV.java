@@ -1,7 +1,5 @@
 package com.example.demo_quanlytrungtam.controller;
 
-import com.example.demo_quanlytrungtam.database.JDBCManagement;
-import com.example.demo_quanlytrungtam.model.Giaovien;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -36,7 +34,6 @@ public class EditGV implements Initializable {
     TextField ngaysinh;
 
     public void gohome() {
-
             Stage stage = (Stage) cancel.getScene().getWindow();
             stage.setTitle("Đăng nhập");
             stage.close();

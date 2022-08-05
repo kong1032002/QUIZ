@@ -1,7 +1,7 @@
 package com.example.demo_quanlytrungtam.controller;
 
 import com.example.demo_quanlytrungtam.Main;
-import com.example.demo_quanlytrungtam.model.Giaovien;
+import com.example.demo_quanlytrungtam.model.Teacher;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class GiaovienController {
+public class TeacherController {
     @FXML
     Button home;
     @FXML
@@ -22,29 +22,29 @@ public class GiaovienController {
     @FXML
     Button editGV;
     @FXML
-    TableView<Giaovien> table;
+    TableView<Teacher> table;
     @FXML
-    TableColumn<Giaovien, String> maGV;
+    TableColumn<Teacher, String> maGV;
     @FXML
-    TableColumn<Giaovien, String> ten;
+    TableColumn<Teacher, String> ten;
     @FXML
-    TableColumn<Giaovien, String> gioitinh;
+    TableColumn<Teacher, String> gioitinh;
     @FXML
-    TableColumn<Giaovien, String> diachi;
+    TableColumn<Teacher, String> diachi;
     @FXML
-    TableColumn<Giaovien, String> gmail;
+    TableColumn<Teacher, String> gmail;
     @FXML
-    TableColumn<Giaovien, String> ngaysinh;
+    TableColumn<Teacher, String> ngaysinh;
     @FXML
-    TableColumn<Giaovien, String> chucvu;
+    TableColumn<Teacher, String> chucvu;
     @FXML
-    TableColumn<Giaovien, Integer> sdt;
+    TableColumn<Teacher, Integer> sdt;
     @FXML
-    TableColumn<Giaovien, Integer> cccd;
+    TableColumn<Teacher, Integer> cccd;
     @FXML
-    TableColumn<Giaovien, Integer> luong;
+    TableColumn<Teacher, Integer> luong;
 
-    private ObservableList<Giaovien> listGV = FXCollections.observableArrayList();
+    private ObservableList<Teacher> listGV = FXCollections.observableArrayList();
 
     public void gohome() {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/example/demo_quanlytrungtam/views/viewMain.fxml"));

@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TracNghiemDB {
-    public static List<TracNghiem> getAllQuest() {
+    public static List<TracNghiem> getData() {
         List<TracNghiem> list = new ArrayList<>();
         String sql = "SELECT * FROM tracnghiem";
         Connection conn = JDBCConnection.getJDBCConnection();
@@ -37,7 +37,7 @@ public class TracNghiemDB {
         return list;
     }
 
-    public static void addTracNghiem(TracNghiem quest){
+    public static void pushData(TracNghiem quest){
         Connection conn = JDBCConnection.getJDBCConnection();
         String sql = "insert into tracnghiem(mon, chuong, deBai, doKho, A, B, C, D, dapAn) \n"
                 + "values (?, ?, ?, ?, ?, ?, ?, ?, ?);";

@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TuLuanDB {
-    public static List<TuLuan> getAllQuest() {
+    public static List<TuLuan> getData() {
         List<TuLuan> list = new ArrayList<>();
         String sql = "SELECT * FROM tuluan";
         Connection conn = JDBCConnection.getJDBCConnection();
@@ -33,7 +33,7 @@ public class TuLuanDB {
         return list;
     }
 
-    public static void addTracNghiem(TuLuan quest){
+    public static void pushData(TuLuan quest){
         Connection conn = JDBCConnection.getJDBCConnection();
         String sql = "insert into tuluan(mon, chuong , deBai, doKho, goiY)\n" +
                 "values (?, ?, ?, ?, ?);";

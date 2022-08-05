@@ -9,8 +9,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AccountDB {
-    public static List<Account> getAllAccount() {
+public class AccountDB  implements EditData<Account>{
+    public static List<Account> getData() {
         List<Account> list = new ArrayList<>();
         String sql = "SELECT * FROM TAIKHOAN";
         Connection conn = JDBCConnection.getJDBCConnection();
@@ -32,7 +32,7 @@ public class AccountDB {
         return list;
     }
 
-    public static void addAccount(Account acc){
+    public static void pushData(Account acc){
         Connection conn = JDBCConnection.getJDBCConnection();
         String sql = "insert into taikhoan(tendangnhap, matkhau, sdt, gmail, ten) \n" +
                 "values (?, ?, ?, ?, ?);";

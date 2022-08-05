@@ -15,7 +15,6 @@ public class DethiController {
     @FXML
     Button lamdethi;
 
-
     public void gohome() {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/example/demo_quanlytrungtam/views/viewMain.fxml"));
         Scene scene = null;

@@ -1,8 +1,6 @@
 package com.example.demo_quanlytrungtam;
 
-import com.example.demo_quanlytrungtam.database.AccountDB;
-import com.example.demo_quanlytrungtam.database.JDBCConnection;
-import com.example.demo_quanlytrungtam.database.TracNghiemDB;
+import com.example.demo_quanlytrungtam.database.*;
 import com.example.demo_quanlytrungtam.model.Account;
 import com.example.demo_quanlytrungtam.model.Cauhoi;
 import com.example.demo_quanlytrungtam.model.TracNghiem;
@@ -13,10 +11,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.io.PrintStream;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 
 public class Main extends Application{
 
@@ -30,7 +25,7 @@ public class Main extends Application{
     }
 
     public static void main(String[] args) {
-        launch();
+//        launch();
 //        Account account = new Account();
 //        account.setTendangnhap("123123");
 //        account.setMatkhau("123");
@@ -38,5 +33,10 @@ public class Main extends Application{
 //        account.setTen("123132");
 //        account.setGmail("123123");
 //        AccountDB.addAccount(account);
+        System.out.println(StudentDB.getData());
+        System.out.println(TeacherDB.getData());
+        System.out.println(AccountDB.getData());
+        System.out.println(TracNghiemDB.getData());
+        System.out.println(TuLuanDB.getData());
     }
 }

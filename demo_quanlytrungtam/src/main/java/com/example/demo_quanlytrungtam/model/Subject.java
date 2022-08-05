@@ -1,4 +1,4 @@
 package com.example.demo_quanlytrungtam.model;
 
-public class Monhoc {
+public class Subject {
 }

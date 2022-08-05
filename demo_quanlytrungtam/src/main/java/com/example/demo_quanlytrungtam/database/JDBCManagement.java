@@ -7,11 +7,11 @@ import java.util.List;
 public class JDBCManagement {
 
     public static List<Account> getAllAccount() {
-       return AccountDB.getAllAccount();
+       return AccountDB.getData();
     }
 
     public static void addAccount(Account acc){
-        AccountDB.addAccount(acc);
+        AccountDB.pushData(acc);
     }
 
 }

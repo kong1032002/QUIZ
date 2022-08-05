@@ -1,10 +1,10 @@
 package com.example.demo_quanlytrungtam.model;
 
-public class Student {
+public class Student extends Person{
     private int id;
     private String father;
     private String mother;
-    private String parentPhoneNumber;
+    private int parentPhoneNumber;
 
     public int getId() {
         return id;
@@ -30,11 +30,27 @@ public class Student {
         this.mother = mother;
     }
 
-    public String getParentPhoneNumber() {
+    public int getParentPhoneNumber() {
         return parentPhoneNumber;
     }
 
-    public void setParentPhoneNumber(String parentPhoneNumber) {
+    public void setParentPhoneNumber(int parentPhoneNumber) {
         this.parentPhoneNumber = parentPhoneNumber;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", firstname='" + firstname + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", birthday='" + birthday + '\'' +
+                ", gender='" + gender + '\'' +
+                ", phoneNumber=" + phoneNumber +
+                ", id=" + id +
+                ", father='" + father + '\'' +
+                ", mother='" + mother + '\'' +
+                ", parentPhoneNumber=" + parentPhoneNumber +
+                "}";
     }
 }

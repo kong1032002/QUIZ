@@ -1,6 +1,6 @@
 package com.example.demo_quanlytrungtam.model;
 
-public class Giaovien extends Person{
+public class Teacher extends Person{
     private int idCardNumber;
     private String email;
     private String address;
@@ -61,5 +61,22 @@ public class Giaovien extends Person{
 
     public void setSalary(double salary) {
         this.salary = salary;
+    }
+
+    @Override
+    public String toString() {
+        return "Teacher{" +
+                "id=" + id +
+                ", firstname='" + firstname + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", birthday='" + birthday + '\'' +
+                ", gender='" + gender + '\'' +
+                ", phoneNumber=" + phoneNumber +
+                ", idCardNumber=" + idCardNumber +
+                ", email='" + email + '\'' +
+                ", address='" + address + '\'' +
+                ", role='" + role + '\'' +
+                ", salary=" + salary +
+                '}';
     }
 }

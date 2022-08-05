@@ -29,7 +29,7 @@ public class ViewMain implements Initializable {
     Button thongke;
 
     public void gotohocvien() {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/example/demo_quanlytrungtam/views/hocvien.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/example/demo_quanlytrungtam/views/Student.fxml"));
         Scene scene = null;
         try {
             scene = new Scene(fxmlLoader.load(), 1000, 700);
@@ -43,7 +43,7 @@ public class ViewMain implements Initializable {
     }
 
     public void gotogiaovien() {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/example/demo_quanlytrungtam/views/giaovien.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/example/demo_quanlytrungtam/views/Teacher.fxml"));
         Scene scene = null;
         try {
             scene = new Scene(fxmlLoader.load(), 1000, 700);
@@ -72,7 +72,7 @@ public class ViewMain implements Initializable {
     }
 
     public void gotocauhoi() {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/example/demo_quanlytrungtam/views/cauhoi.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/example/demo_quanlytrungtam/views/Quest.fxml"));
         Scene scene = null;
         try {
             scene = new Scene(fxmlLoader.load(), 1000, 700);

@@ -2,7 +2,6 @@ package com.example.demo_quanlytrungtam.controller;
 
 import com.example.demo_quanlytrungtam.Main;
 import com.example.demo_quanlytrungtam.database.TracNghiemDB;
-import com.example.demo_quanlytrungtam.model.Cauhoi;
 import com.example.demo_quanlytrungtam.model.TracNghiem;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,8 +12,10 @@ import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class CauhoiController  {
+public class CauhoiController implements Initializable {
     @FXML
     public ListView<TracNghiem> quests;
     @FXML
@@ -24,8 +25,13 @@ public class CauhoiController  {
     @FXML
     Button cancel;
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        refresh();
+    }
+
     public void refresh() {
-        quests.getItems().addAll(TracNghiemDB.getAllQuest());
+        quests.getItems().addAll(TracNghiemDB.getData());
     }
 
     public void addCH() {
@@ -70,7 +76,6 @@ public class CauhoiController  {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-//        refresh();
     }
 
 }
