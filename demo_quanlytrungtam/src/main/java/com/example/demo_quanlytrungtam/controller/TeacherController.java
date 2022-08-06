@@ -1,20 +1,23 @@
 package com.example.demo_quanlytrungtam.controller;
 
 import com.example.demo_quanlytrungtam.Main;
+import com.example.demo_quanlytrungtam.database.TeacherDB;
 import com.example.demo_quanlytrungtam.model.Teacher;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class TeacherController {
+public class TeacherController implements Initializable {
     @FXML
     Button home;
     @FXML
@@ -24,27 +27,44 @@ public class TeacherController {
     @FXML
     TableView<Teacher> table;
     @FXML
-    TableColumn<Teacher, String> maGV;
+    TableColumn<Teacher, Integer> idCol;
     @FXML
-    TableColumn<Teacher, String> ten;
+    TableColumn<Teacher, String> firstnameCol;
     @FXML
-    TableColumn<Teacher, String> gioitinh;
+    TableColumn<Teacher, String> lastnameCol;
     @FXML
-    TableColumn<Teacher, String> diachi;
+    TableColumn<Teacher, String> genderCol;
     @FXML
-    TableColumn<Teacher, String> gmail;
+    TableColumn<Teacher, String> addressCol;
     @FXML
-    TableColumn<Teacher, String> ngaysinh;
+    TableColumn<Teacher, String> emailCol;
     @FXML
-    TableColumn<Teacher, String> chucvu;
+    TableColumn<Teacher, String> birthdayCol;
     @FXML
-    TableColumn<Teacher, Integer> sdt;
+    TableColumn<Teacher, String> roleCol;
     @FXML
-    TableColumn<Teacher, Integer> cccd;
+    TableColumn<Teacher, Integer> phoneNumberCol;
     @FXML
-    TableColumn<Teacher, Integer> luong;
+    TableColumn<Teacher, Integer> idCardCol;
+    @FXML
+    TableColumn<Teacher, Integer> salaryCol;
 
-    private ObservableList<Teacher> listGV = FXCollections.observableArrayList();
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+//        idCol.
+        idCol.setCellValueFactory(new PropertyValueFactory<>("id"));
+        firstnameCol.setCellValueFactory(new PropertyValueFactory<>("firstname"));
+        lastnameCol.setCellValueFactory(new PropertyValueFactory<>("lastname"));
+        genderCol.setCellValueFactory(new PropertyValueFactory<>("gender"));
+        addressCol.setCellValueFactory(new PropertyValueFactory<>("address"));
+        emailCol.setCellValueFactory(new PropertyValueFactory<>("email"));
+        birthdayCol.setCellValueFactory(new PropertyValueFactory<>("birthday"));
+        roleCol.setCellValueFactory(new PropertyValueFactory<>("role"));
+        phoneNumberCol.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));
+        idCardCol.setCellValueFactory(new PropertyValueFactory<>("idCardNumber"));
+        salaryCol.setCellValueFactory(new PropertyValueFactory<>("salary"));
+        table.getItems().addAll(TeacherDB.getData());
+    }
 
     public void gohome() {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/example/demo_quanlytrungtam/views/viewMain.fxml"));

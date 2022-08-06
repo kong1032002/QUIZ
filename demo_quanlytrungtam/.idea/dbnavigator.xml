@@ -34,7 +34,7 @@
 );]]></console>
     </connection>
     <connection id="45b0359e-bad4-45fa-9619-727e8b970a77">
-      <console name="MySQLConnection" type="STANDARD" schema="quanlytrungtam" session="Main"><![CDATA[drop table taikhoan;]]></console>
+      <console name="MySQLConnection" type="STANDARD" schema="quanlytrungtam" session="Main"><![CDATA[select * from hocsinh;]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
@@ -45,6 +45,7 @@
     <connection id="45b0359e-bad4-45fa-9619-727e8b970a77" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="45b0359e-bad4-45fa-9619-727e8b970a77" dataset="quanlytrungtam.hocsinh" active-filter-id="" />
     <filter-actions connection-id="45b0359e-bad4-45fa-9619-727e8b970a77" dataset="quanlytrungtam.taikhoan" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">

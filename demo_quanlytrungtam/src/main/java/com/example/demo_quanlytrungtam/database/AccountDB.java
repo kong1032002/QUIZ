@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AccountDB  implements EditData<Account>{
+public class AccountDB  implements EditData {
     public static List<Account> getData() {
         List<Account> list = new ArrayList<>();
         String sql = "SELECT * FROM TAIKHOAN";

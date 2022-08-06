@@ -12,17 +12,17 @@
                <content>
                   <TableView fx:id="table" prefHeight="495.0" style="-fx-background-color: #AAE4F0; -fx-border-color: green;">
                      <columns>
-                        <TableColumn fx:id="maGV" prefWidth="100" text="Mã giáo viên" />
-                        <TableColumn fx:id="ten" prefWidth="180" text="Họ" />
-                        <TableColumn fx:id="ten1" prefWidth="180" text="Tên" />
-                        <TableColumn fx:id="ngaysinh" prefWidth="120" text="Ngày sinh" />
-                        <TableColumn fx:id="gioitinh" prefWidth="80" text="Giới tính" />
-                        <TableColumn fx:id="cccd" prefWidth="150" text="Số CMND" />
-                        <TableColumn fx:id="sdt" prefWidth="120" text="Số điện thoại" />
-                        <TableColumn fx:id="gmail" prefWidth="200" text="Gmail" />
-                        <TableColumn fx:id="diachi" prefWidth="250" text="Địa chỉ" />
-                        <TableColumn fx:id="chucvu" prefWidth="120" text="Chức vụ" />
-                        <TableColumn fx:id="luong" prefWidth="150" text="Lương công" />
+                        <TableColumn fx:id="idCol" prefWidth="100" text="Mã giáo viên" />
+                        <TableColumn fx:id="firstnameCol" prefWidth="180" text="Họ" />
+                        <TableColumn fx:id="lastnameCol" prefWidth="180" text="Tên" />
+                        <TableColumn fx:id="birthdayCol" prefWidth="120" text="Ngày sinh" />
+                        <TableColumn fx:id="genderCol" prefWidth="80" text="Giới tính" />
+                        <TableColumn fx:id="idCardCol" prefWidth="150" text="Số CMND" />
+                        <TableColumn fx:id="phoneNumberCol" prefWidth="120" text="Số điện thoại" />
+                        <TableColumn fx:id="emailCol" prefWidth="200" text="Gmail" />
+                        <TableColumn fx:id="addressCol" prefWidth="250" text="Địa chỉ" />
+                        <TableColumn fx:id="roleCol" prefWidth="120" text="Chức vụ" />
+                        <TableColumn fx:id="salaryCol" prefWidth="150" text="Lương công" />
                      </columns>
                   </TableView>
                </content>

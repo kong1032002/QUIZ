@@ -16,22 +16,22 @@ import java.io.IOException;
 
 public class Login {
     @FXML
-    Button signin;
+    Button login;
     @FXML
-    Text signup;
+    Text register;
     @FXML
     TextField username;
     @FXML
     PasswordField password;
 
 
-    public void signUp() {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/example/demo_quanlytrungtam/views/viewSignUp.fxml"));
+    public void login() {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/example/demo_quanlytrungtam/views/viewRegister.fxml"));
         Scene scene = null;
         try {
             scene = new Scene(fxmlLoader.load(), 600, 400);
-            Stage stage = (Stage) signup.getScene().getWindow();
-            stage.setTitle("Đăng ký");
+            Stage stage = (Stage) register.getScene().getWindow();
+            stage.setTitle("Đăng nhập");
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
@@ -86,7 +86,7 @@ public class Login {
         Scene scene = null;
         try {
             scene = new Scene(fxmlLoader.load(), 1000, 700);
-            Stage stage = (Stage) signin.getScene().getWindow();
+            Stage stage = (Stage) login.getScene().getWindow();
             stage.setTitle("Trang chủ");
             stage.setScene(scene);
             stage.setX(250);

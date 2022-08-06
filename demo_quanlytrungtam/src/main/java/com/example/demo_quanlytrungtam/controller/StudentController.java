@@ -1,12 +1,9 @@
 package com.example.demo_quanlytrungtam.controller;
 
 import com.example.demo_quanlytrungtam.Main;
-import com.example.demo_quanlytrungtam.database.JDBCConnection;
 import com.example.demo_quanlytrungtam.database.StudentDB;
-import com.example.demo_quanlytrungtam.database.TracNghiemDB;
 import com.example.demo_quanlytrungtam.model.Student;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import com.example.demo_quanlytrungtam.model.Student;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -22,16 +19,26 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class StudentController implements Initializable {
-    public TableColumn idCol;
-    public TableColumn firstnameCol;
-    public TableColumn lastnameCol;
-    public TableColumn genderCol;
-    public TableColumn birthdayCol;
-    public TableColumn motherCol;
-    public TableColumn parentPhoneNumberCol;
-    public TableColumn fatherCol;
-    public TableColumn phoneNumberCol;
-    public TableView table;
+    @FXML
+    TableColumn<Student, Integer> idCol;
+    @FXML
+    TableColumn<Student, String> firstnameCol;
+    @FXML
+    TableColumn<Student, String> lastnameCol;
+    @FXML
+    TableColumn<Student, String> genderCol;
+    @FXML
+    TableColumn<Student, String> birthdayCol;
+    @FXML
+    TableColumn<Student, String> motherCol;
+    @FXML
+    TableColumn<Student, String> parentPhoneNumberCol;
+    @FXML
+    TableColumn<Student, String> fatherCol;
+    @FXML
+    TableColumn<Student, String> phoneNumberCol;
+    @FXML
+    TableView<Student> table;
     @FXML
     Button home;
     @FXML
@@ -41,10 +48,16 @@ public class StudentController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        idCol.setSortType(TableColumn.SortType.DESCENDING);
-//        ObservableList<Student> list = FXCollections.observableArrayList(StudentDB.getData());
-
-//        table.setItems(list);
+        idCol.setCellValueFactory(new PropertyValueFactory<>("id"));
+        firstnameCol.setCellValueFactory(new PropertyValueFactory<>("firstname"));
+        lastnameCol.setCellValueFactory(new PropertyValueFactory<>("lastname"));
+        genderCol.setCellValueFactory(new PropertyValueFactory<>("gender"));
+        birthdayCol.setCellValueFactory(new PropertyValueFactory<>("birthday"));
+        motherCol.setCellValueFactory(new PropertyValueFactory<>("mother"));
+        fatherCol.setCellValueFactory(new PropertyValueFactory<>("father"));
+        phoneNumberCol.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));
+        parentPhoneNumberCol.setCellValueFactory(new PropertyValueFactory<>("parentPhoneNumber"));
+        table.getItems().addAll(StudentDB.getData());
     }
 
     public void refresh() {
@@ -64,6 +77,7 @@ public class StudentController implements Initializable {
             throw new RuntimeException(e);
         }
     }
+
     public void addHV() {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/example/demo_quanlytrungtam/views/editHV.fxml"));
         Scene scene = null;

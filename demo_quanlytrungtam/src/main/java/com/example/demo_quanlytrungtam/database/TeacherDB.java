@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TeacherDB implements EditData<Teacher>{
+public class TeacherDB implements EditData {
     public static List<Teacher> getData() {
         List<Teacher> giaoviens = new ArrayList<>();
         String sql = "Select * from Giaovien";

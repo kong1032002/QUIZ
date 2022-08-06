@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class SignUp {
+public class Register {
     @FXML
     Button signup;
     @FXML
@@ -26,7 +26,7 @@ public class SignUp {
     @FXML
     TextField name;
     @FXML
-    TextField gmail;
+    TextField email;
     @FXML
     TextField phone;
 
@@ -39,23 +39,23 @@ public class SignUp {
         return true;
     }
 
-    public void signIn() {
+    public void register() {
         if(username.getText() == "" || pass.getText() == "" || password.getText() == "" ||
-            name.getText() == "" || gmail.getText() == "" || phone.getText() == "") {
+            name.getText() == "" || email.getText() == "" || phone.getText() == "") {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Thông báo");
             alert.setHeaderText("Lỗi");
             alert.setContentText("Vui lòng nhập đầy đủ thông tin!");
             alert.showAndWait();
         } else {
-            if(pass.getText().equals(password.getText()) == false) {
+            if(!pass.getText().equals(password.getText())) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Thông báo");
                 alert.setHeaderText("Lỗi");
                 alert.setContentText("Mật khẩu nhập lại không khớp");
                 alert.showAndWait();
             } else {
-                if(checkAcc() == false) {
+                if(!checkAcc()) {
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setTitle("Thông báo");
                     alert.setHeaderText("Lỗi");
@@ -67,9 +67,9 @@ public class SignUp {
                     acc.setPassword(password.getText());
                     acc.setFullName(name.getText());
                     acc.setPhoneNumber(Integer.parseInt(phone.getText()));
-                    acc.setEmail(gmail.getText());
+                    acc.setEmail(email.getText());
                     JDBCManagement.addAccount(acc);
-                    FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/example/demo_quanlytrungtam/views/viewSignIn.fxml"));
+                    FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/example/demo_quanlytrungtam/views/viewLogin.fxml"));
                     Scene scene = null;
                     try {
                         scene = new Scene(fxmlLoader.load(), 600, 400);
@@ -85,5 +85,4 @@ public class SignUp {
             }
         }
     }
-
 }
