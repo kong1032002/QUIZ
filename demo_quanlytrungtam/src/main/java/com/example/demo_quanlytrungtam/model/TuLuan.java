@@ -1,6 +1,6 @@
 package com.example.demo_quanlytrungtam.model;
 
-public class TuLuan extends Cauhoi {
+public class TuLuan extends Question {
     private String goiY;
 
     public String getGoiY() {

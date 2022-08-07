@@ -3,7 +3,6 @@ package com.example.demo_quanlytrungtam.controller;
 import com.example.demo_quanlytrungtam.Main;
 import com.example.demo_quanlytrungtam.database.StudentDB;
 import com.example.demo_quanlytrungtam.model.Student;
-import com.example.demo_quanlytrungtam.model.Student;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -79,7 +78,7 @@ public class StudentController implements Initializable {
     }
 
     public void addHV() {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/example/demo_quanlytrungtam/views/editHV.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/example/demo_quanlytrungtam/views/AddStudent.fxml"));
         Scene scene = null;
         try {
             scene = new Scene(fxmlLoader.load(), 640, 640);
@@ -93,7 +92,7 @@ public class StudentController implements Initializable {
     }
 
     public void editHV() {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/example/demo_quanlytrungtam/views/editHV.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/example/demo_quanlytrungtam/views/AddStudent.fxml"));
         Scene scene = null;
         try {
             scene = new Scene(fxmlLoader.load(), 640, 640);

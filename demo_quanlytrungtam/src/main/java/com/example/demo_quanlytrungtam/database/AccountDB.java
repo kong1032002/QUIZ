@@ -22,7 +22,7 @@ public class AccountDB  implements EditData {
                 c.setUsername(rs.getString("tendangnhap"));
                 c.setPassword(rs.getString("matkhau"));
                 c.setFullName(rs.getString("ten"));
-                c.setEmail(rs.getString("gmail"));
+                c.setEmail(rs.getString("email"));
                 c.setPhoneNumber(rs.getInt("sdt"));
                 list.add(c);
             }

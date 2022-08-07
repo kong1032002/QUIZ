@@ -18,7 +18,7 @@ public class DecuongController {
     Button cancel;
 
     public void addDC() {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/example/demo_quanlytrungtam/views/editCH.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/example/demo_quanlytrungtam/views/AddQuestion.fxml"));
         Scene scene = null;
         try {
             scene = new Scene(fxmlLoader.load(), 400, 400);
@@ -32,7 +32,7 @@ public class DecuongController {
     }
 
     public void editDC() {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/example/demo_quanlytrungtam/views/editCH.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/example/demo_quanlytrungtam/views/AddQuestion.fxml"));
         Scene scene = null;
         try {
             scene = new Scene(fxmlLoader.load(), 400, 400);

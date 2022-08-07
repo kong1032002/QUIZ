@@ -1,6 +1,6 @@
 package com.example.demo_quanlytrungtam.database;
 
-import com.example.demo_quanlytrungtam.model.TracNghiem;
+import com.example.demo_quanlytrungtam.model.MultiChoiceQuest;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,8 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TracNghiemDB {
-    public static List<TracNghiem> getData() {
-        List<TracNghiem> list = new ArrayList<>();
+    public static List<MultiChoiceQuest> getData() {
+        List<MultiChoiceQuest> list = new ArrayList<>();
         String sql = "SELECT * FROM tracnghiem";
         Connection conn = JDBCConnection.getJDBCConnection();
         try {
@@ -19,7 +19,7 @@ public class TracNghiemDB {
             PreparedStatement p = conn.prepareStatement(sql);
             ResultSet rs = p.executeQuery();
             while(rs.next()) {
-                TracNghiem c = new TracNghiem();
+                MultiChoiceQuest c = new MultiChoiceQuest();
                 c.setSubject(rs.getString("mon"));
                 c.setChapter(rs.getInt("chuong"));
                 c.setQuest(rs.getString("deBai"));
@@ -37,7 +37,7 @@ public class TracNghiemDB {
         return list;
     }
 
-    public static void pushData(TracNghiem quest){
+    public static void pushData(MultiChoiceQuest quest){
         Connection conn = JDBCConnection.getJDBCConnection();
         String sql = "insert into tracnghiem(mon, chuong, deBai, doKho, A, B, C, D, dapAn) \n"
                 + "values (?, ?, ?, ?, ?, ?, ?, ?, ?);";
@@ -51,7 +51,7 @@ public class TracNghiemDB {
             p.setString(6, quest.getB());
             p.setString(7, quest.getC());
             p.setString(8, quest.getD());
-            p.setString(0, quest.getDapAn());
+            p.setString(9, quest.getDapAn());
             p.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);

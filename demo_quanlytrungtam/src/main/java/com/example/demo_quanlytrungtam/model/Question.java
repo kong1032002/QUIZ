@@ -1,6 +1,6 @@
 package com.example.demo_quanlytrungtam.model;
 
-public abstract class Cauhoi {
+public abstract class Question {
     protected int id;
     protected String subject;
     protected int chapter;

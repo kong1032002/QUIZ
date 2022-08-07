@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo_quanlytrungtam.controller.AddQuestion">
+   <TextField fx:id="subject" layoutX="86.0" layoutY="38.0" prefHeight="26.0" prefWidth="290.0" />
+   <TextField fx:id="question" layoutX="85.0" layoutY="79.0" prefHeight="68.0" prefWidth="290.0" />
+   <VBox layoutX="85.0" layoutY="167.0" prefHeight="104.0" prefWidth="290.0">
+      <TextField fx:id="firstOption" promptText="A" />
+      <TextField fx:id="secondOption" promptText="B" />
+      <TextField fx:id="thirdOption" promptText="C" />
+      <TextField fx:id="fourthOption" promptText="D" />
+   </VBox>
+   <Text layoutX="14.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Môn học">
+      <font>
+         <Font name="System Italic" size="14.0" />
+      </font>
+   </Text>
+   <Text layoutX="10.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nội dung câu hỏi" wrappingWidth="59.25567626953125">
+      <font>
+         <Font name="System Italic" size="14.0" />
+      </font>
+   </Text>
+   <Text layoutX="17.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Đáp án">
+      <font>
+         <Font name="System Italic" size="14.0" />
+      </font>
+   </Text>
+   <TextField fx:id="answer" layoutX="106.0" layoutY="281.0" prefHeight="26.0" prefWidth="270.0" />
+   <Text layoutX="10.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Đáp án đúng" textAlignment="CENTER" wrappingWidth="86.4556884765625">
+      <font>
+         <Font name="System Italic" size="14.0" />
+      </font>
+   </Text>
+   <Button layoutX="56.0" layoutY="350.0" mnemonicParsing="false" onMouseClicked="#ok" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #4b6cc9;" text="OK" textFill="#d1d1d1" />
+   <Button layoutX="231.0" layoutY="350.0" mnemonicParsing="false" onMouseClicked="#cancel" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #4b6cc9;" text="CANCEL" textFill="#d1d1d1" />
+   <Text fill="#3277c2" layoutX="76.0" layoutY="329.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Lưu ý: Một câu hỏi chỉ có một đáp án đúng" textAlignment="CENTER">
+      <font>
+         <Font name="System Bold Italic" size="12.0" />
+      </font>
+   </Text>
+</AnchorPane>

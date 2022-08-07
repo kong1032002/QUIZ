@@ -28,7 +28,7 @@ public class TeacherDB implements EditData {
                 giaovien.setId(resultSet.getInt("id"));
                 giaovien.setGender(resultSet.getString("gioiTinh"));
                 giaovien.setPhoneNumber(resultSet.getInt("sdt"));
-                giaovien.setIdCardNumber(resultSet.getInt("CMND"));
+                giaovien.setIdCard(resultSet.getInt("cccd"));
                 giaovien.setId(resultSet.getInt("id"));
                 giaoviens.add(giaovien);
             }
@@ -50,7 +50,7 @@ public class TeacherDB implements EditData {
             statement.setString(4, teacher.getGender());
             statement.setInt(5, teacher.getPhoneNumber());
             statement.setString(6, teacher.getEmail());
-            statement.setInt(7, teacher.getIdCardNumber());
+            statement.setInt(7, teacher.getIdCard());
             statement.setString(8, teacher.getAddress());
             statement.setString(9, teacher.getRole());
             statement.setDouble(10, teacher.getSalary());

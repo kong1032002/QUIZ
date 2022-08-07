@@ -1,7 +1,6 @@
 package com.example.demo_quanlytrungtam.model;
 
 public class Student extends Person{
-    private int id;
     private String father;
     private String mother;
     private int parentPhoneNumber;

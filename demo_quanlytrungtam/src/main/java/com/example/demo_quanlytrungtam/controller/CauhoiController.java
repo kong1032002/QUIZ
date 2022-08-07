@@ -2,7 +2,7 @@ package com.example.demo_quanlytrungtam.controller;
 
 import com.example.demo_quanlytrungtam.Main;
 import com.example.demo_quanlytrungtam.database.TracNghiemDB;
-import com.example.demo_quanlytrungtam.model.TracNghiem;
+import com.example.demo_quanlytrungtam.model.MultiChoiceQuest;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -17,7 +17,7 @@ import java.util.ResourceBundle;
 
 public class CauhoiController implements Initializable {
     @FXML
-    public ListView<TracNghiem> quests;
+    ListView<MultiChoiceQuest> quests;
     @FXML
     Button addCH;
     @FXML
@@ -35,7 +35,7 @@ public class CauhoiController implements Initializable {
     }
 
     public void addCH() {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/example/demo_quanlytrungtam/views/editCH.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/example/demo_quanlytrungtam/views/AddQuestion.fxml"));
         Scene scene = null;
         try {
             scene = new Scene(fxmlLoader.load(), 400, 400);
@@ -46,11 +46,10 @@ public class CauhoiController implements Initializable {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        refresh();
     }
 
     public void editCH() {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/example/demo_quanlytrungtam/views/editCH.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/example/demo_quanlytrungtam/views/AddQuestion.fxml"));
         Scene scene = null;
         try {
             scene = new Scene(fxmlLoader.load(), 400, 400);
@@ -61,7 +60,6 @@ public class CauhoiController implements Initializable {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        refresh();
     }
 
     public void gohome() {

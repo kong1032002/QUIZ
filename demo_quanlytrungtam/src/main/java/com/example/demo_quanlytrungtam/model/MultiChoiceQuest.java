@@ -1,6 +1,6 @@
 package com.example.demo_quanlytrungtam.model;
 
-public class TracNghiem extends Cauhoi {
+public class MultiChoiceQuest extends Question {
 
     private String A;
     private String B;

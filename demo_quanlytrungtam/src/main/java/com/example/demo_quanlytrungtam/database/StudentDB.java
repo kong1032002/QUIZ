@@ -1,6 +1,7 @@
 package com.example.demo_quanlytrungtam.database;
 
 import com.example.demo_quanlytrungtam.model.Student;
+import javafx.collections.FXCollections;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -37,8 +38,8 @@ public class StudentDB implements EditData {
 
     public static void pushData(Student student) {
         Connection connection = JDBCConnection.getJDBCConnection();
-        String sql = "insert into hocsinh(ho, ten, ngaySinh, gioiTinh, sdt, sdtPhuHuynh) \n" +
-                " values(?, ?, ?, ?, ?, ?);\n";
+        String sql = "insert into hocsinh(ho, ten, ngaySinh, gioiTinh, sdt, email, cccd, sdtPhuHuynh) " +
+                "values(?, ?, ?, ?, ?, ?, ?, ?);";
         try {
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setString(1, student.getFirstname());
@@ -46,7 +47,9 @@ public class StudentDB implements EditData {
             statement.setString(3, student.getBirthday());
             statement.setString(4, student.getGender());
             statement.setInt(5, student.getPhoneNumber());
-            statement.setInt(6, student.getParentPhoneNumber());
+            statement.setString(6, student.getEmail());
+            statement.setInt(7, student.getIdCard());
+            statement.setInt(8, student.getParentPhoneNumber());
             statement.executeUpdate();
         } catch (Exception e) {
             throw new RuntimeException(e);
