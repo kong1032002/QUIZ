@@ -5,14 +5,16 @@ import com.example.demo_quanlytrungtam.model.Teacher;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 public class TeacherDB implements EditData {
+    private static final Connection connection = JDBCConnection.getJDBCConnection();
+
     public static List<Teacher> getData() {
         List<Teacher> giaoviens = new ArrayList<>();
         String sql = "Select * from Giaovien";
-        Connection connection = JDBCConnection.getJDBCConnection();
         try {
             PreparedStatement statement = connection.prepareStatement(sql);
             ResultSet resultSet = statement.executeQuery();
@@ -39,14 +41,13 @@ public class TeacherDB implements EditData {
     }
 
     public static void pushData(Teacher teacher) {
-        Connection connection = JDBCConnection.getJDBCConnection();
         String sql = "insert into giaovien(ho, ten, ngaySinh, gioiTinh, sdt, email, CMND, diaChi, chucVu, luong)" +
                 "values (?,?,?,?,?,?,?,?,?,?)";
         try {
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setString(1, teacher.getFirstname());
             statement.setString(2, teacher.getLastname());
-            statement.setString(3, teacher.getBirthday());
+            statement.setString(3, String.valueOf(teacher.getBirthday()));
             statement.setString(4, teacher.getGender());
             statement.setInt(5, teacher.getPhoneNumber());
             statement.setString(6, teacher.getEmail());
@@ -57,6 +58,16 @@ public class TeacherDB implements EditData {
             statement.executeUpdate();
         } catch (Exception e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    public static void removeData(int id) {
+        String sql = "delete from giaovien where id = " + id;
+        try {
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

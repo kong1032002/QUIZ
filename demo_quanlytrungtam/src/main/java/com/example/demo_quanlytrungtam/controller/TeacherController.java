@@ -61,7 +61,7 @@ public class TeacherController implements Initializable {
         birthdayCol.setCellValueFactory(new PropertyValueFactory<>("birthday"));
         roleCol.setCellValueFactory(new PropertyValueFactory<>("role"));
         phoneNumberCol.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));
-        idCardCol.setCellValueFactory(new PropertyValueFactory<>("idCardNumber"));
+        idCardCol.setCellValueFactory(new PropertyValueFactory<>("idCard"));
         salaryCol.setCellValueFactory(new PropertyValueFactory<>("salary"));
         table.getItems().addAll(TeacherDB.getData());
     }

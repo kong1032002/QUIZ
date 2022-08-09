@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -56,11 +57,12 @@ public class StudentController implements Initializable {
         fatherCol.setCellValueFactory(new PropertyValueFactory<>("father"));
         phoneNumberCol.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));
         parentPhoneNumberCol.setCellValueFactory(new PropertyValueFactory<>("parentPhoneNumber"));
-        table.getItems().addAll(StudentDB.getData());
+        refresh();
     }
 
     public void refresh() {
-
+        table.getItems().removeAll(table.getItems());
+        table.getItems().addAll(StudentDB.getData());
     }
 
     public void gohome() {
@@ -89,6 +91,7 @@ public class StudentController implements Initializable {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        refresh();
     }
 
     public void editHV() {
@@ -103,6 +106,13 @@ public class StudentController implements Initializable {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        refresh();
+    }
 
+    public void deleteStudent(MouseEvent mouseEvent) {
+        Student student = table.getSelectionModel().getSelectedItem();
+        System.out.println(student);
+        StudentDB.removeData(student.getId());
+        refresh();
     }
 }

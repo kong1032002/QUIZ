@@ -32,8 +32,6 @@ public class AddStudent implements Initializable {
     TextField phoneNumber;
     @FXML
     Button cancel;
-    @FXML
-    TableView table;
 
 
     public void gohome() {

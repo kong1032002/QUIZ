@@ -10,41 +10,47 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo_quanlytrungtam.controller.StudentController">
-   <children>
-      <AnchorPane layoutY="-2.0" prefHeight="700.0" prefWidth="1000.0">
-         <children>
-            <ScrollPane layoutX="38.0" layoutY="108.0" prefHeight="506.0" prefWidth="923.0" style="-fx-border-color: blue;">
-               <content>
-                  <TableView fx:id="table" prefHeight="518.0" prefWidth="1280.0" style="-fx-background-color: #AAE4F0; -fx-border-color: green;">
-                     <columns>
-                        <TableColumn fx:id="idCol" prefWidth="116.79998469352722" text="Mã học viên" />
-                        <TableColumn fx:id="firstnameCol" prefWidth="170.39996337890625" text="Họ" />
-                        <TableColumn fx:id="lastnameCol" minWidth="0.0" prefWidth="89.5999755859375" text="Tên" />
-                        <TableColumn fx:id="genderCol" minWidth="0.0" prefWidth="62.4000244140625" text="Giới tính" />
-                        <TableColumn fx:id="birthdayCol" prefWidth="125.5999755859375" text="Ngày sinh" />
-                        <TableColumn fx:id="phoneNumberCol" prefWidth="197.60003662109375" text="Số điện thoại" />
-                        <TableColumn fx:id="fatherCol" prefWidth="184.79998779296875" text="Họ và tên bố" />
-                        <TableColumn fx:id="motherCol" prefWidth="163.20001220703125" text="Họ và tên mẹ" />
-                        <TableColumn fx:id="parentPhoneNumberCol" prefWidth="172.800048828125" text="Số điện thoại của bố/mẹ" />
-                     </columns>
-                  </TableView>
-               </content>
-            </ScrollPane>
-            <ComboBox layoutX="215.0" layoutY="66.0" prefWidth="150.0" promptText="Môn" />
-            <ComboBox layoutX="38.0" layoutY="66.0" prefHeight="26.0" prefWidth="150.0" promptText="Lớp" />
-            <TextField layoutX="705.0" layoutY="65.0" prefHeight="26.0" prefWidth="193.0" />
-            <Button layoutX="902.0" layoutY="65.0" mnemonicParsing="false" text="Search" />
-            <Text fill="#c71e1e" layoutX="38.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="QUẢN LÝ HỌC VIÊN">
-               <font>
-                  <Font name="System Bold Italic" size="18.0" />
-               </font>
-            </Text>
-            <Button fx:id="addHV" layoutX="38.0" layoutY="650.0" mnemonicParsing="false" onMouseClicked="#editHV" prefHeight="26.0" prefWidth="126.0" style="-fx-background-color: #4CC7E0;" text="Thêm học viên" textFill="WHITE" />
-            <Button fx:id="editHV" layoutX="188.0" layoutY="650.0" mnemonicParsing="false" onMouseClicked="#editHV" prefHeight="26.0" prefWidth="126.0" style="-fx-background-color: #4CC7E0;" text="Chỉnh sửa" textFill="WHITE" />
-            <Button layoutX="347.0" layoutY="650.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="126.0" style="-fx-background-color: #4CC7E0;" text="Xóa học viên" textFill="WHITE" />
-            <Button fx:id="home" layoutX="827.0" layoutY="650.0" mnemonicParsing="false" onMouseClicked="#gohome" prefHeight="26.0" prefWidth="126.0" style="-fx-background-color: #4CC7E0;" text="Cancel" textFill="WHITE" />
-         </children>
-      </AnchorPane>
-   </children>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.demo_quanlytrungtam.controller.StudentController">
+   <AnchorPane layoutY="-2.0" prefHeight="700.0" prefWidth="1000.0">
+      <ScrollPane layoutX="38.0" layoutY="108.0" prefHeight="506.0" prefWidth="923.0"
+                  style="-fx-border-color: blue;">
+         <TableView fx:id="table" prefHeight="518.0" prefWidth="1280.0"
+                    style="-fx-background-color: #AAE4F0; -fx-border-color: green;">
+            <columns>
+               <TableColumn fx:id="idCol" prefWidth="116.79998469352722" text="Mã học viên"/>
+               <TableColumn fx:id="firstnameCol" prefWidth="170.39996337890625" text="Họ"/>
+               <TableColumn fx:id="lastnameCol" minWidth="0.0" prefWidth="89.5999755859375" text="Tên"/>
+               <TableColumn fx:id="genderCol" minWidth="0.0" prefWidth="62.4000244140625" text="Giới tính"/>
+               <TableColumn fx:id="birthdayCol" prefWidth="125.5999755859375" text="Ngày sinh"/>
+               <TableColumn fx:id="phoneNumberCol" prefWidth="197.60003662109375" text="Số điện thoại"/>
+               <TableColumn fx:id="fatherCol" prefWidth="184.79998779296875" text="Họ và tên bố"/>
+               <TableColumn fx:id="motherCol" prefWidth="163.20001220703125" text="Họ và tên mẹ"/>
+               <TableColumn fx:id="parentPhoneNumberCol" prefWidth="172.800048828125"
+                            text="Số điện thoại của bố/mẹ"/>
+            </columns>
+         </TableView>
+      </ScrollPane>
+      <ComboBox layoutX="215.0" layoutY="66.0" prefWidth="150.0" promptText="Môn"/>
+      <ComboBox layoutX="38.0" layoutY="66.0" prefHeight="26.0" prefWidth="150.0" promptText="Lớp"/>
+      <TextField layoutX="705.0" layoutY="65.0" prefHeight="26.0" prefWidth="193.0"/>
+      <Button layoutX="902.0" layoutY="65.0" mnemonicParsing="false" text="Search"/>
+      <Text fill="#c71e1e" layoutX="38.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0"
+            text="QUẢN LÝ HỌC VIÊN">
+         <font>
+            <Font name="System Bold Italic" size="18.0"/>
+         </font>
+      </Text>
+      <Button fx:id="addHV" layoutX="38.0" layoutY="650.0" mnemonicParsing="false" onMouseClicked="#addHV"
+              prefHeight="26.0" prefWidth="126.0" style="-fx-background-color: #4CC7E0;" text="Thêm học viên"
+              textFill="WHITE"/>
+      <Button fx:id="editHV" layoutX="188.0" layoutY="650.0" mnemonicParsing="false" onMouseClicked="#editHV"
+              prefHeight="26.0" prefWidth="126.0" style="-fx-background-color: #4CC7E0;" text="Chỉnh sửa"
+              textFill="WHITE"/>
+      <Button layoutX="347.0" layoutY="650.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="126.0" onMouseClicked="#deleteStudent"
+              style="-fx-background-color: #4CC7E0;" text="Xóa học viên" textFill="WHITE"/>
+      <Button fx:id="home" layoutX="827.0" layoutY="650.0" mnemonicParsing="false" onMouseClicked="#gohome"
+              prefHeight="26.0" prefWidth="126.0" style="-fx-background-color: #4CC7E0;" text="Cancel"
+              textFill="WHITE"/>
+   </AnchorPane>
 </AnchorPane>
