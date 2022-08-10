@@ -2,10 +2,12 @@ package com.example.demo_quanlytrungtam.database;
 
 import com.example.demo_quanlytrungtam.model.Exam;
 import com.example.demo_quanlytrungtam.model.MultiChoiceQuest;
+import com.example.demo_quanlytrungtam.model.Question;
 import com.example.demo_quanlytrungtam.model.Subject;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,7 +34,7 @@ public class ExamDB {
     }
 
     public static void pushData(Exam exam) {
-        String sql = "insert into dethi(id, idSubject) \n" +
+        String sql = "insert into dethi(idMonHoc, idSubject) \n" +
                 "values(?, ?);";
         try {
             PreparedStatement statement = JDBCConnection.getJDBCConnection().prepareStatement(sql);
@@ -53,12 +55,12 @@ public class ExamDB {
             sql[1] = "select * from tracnghiem where idMonHoc = " + subject.getId() + " and doKho = 'TH' order by rand() limit " + normal + ";";
             sql[2] = "select * from tracnghiem where idMonHoc = " + subject.getId() + " and doKho = 'VD' order by rand() limit " + hard + ";";
             sql[3] = "select * from tracnghiem where idMonHoc = " + subject.getId() + " and doKho = 'VDC' order by rand() limit " + hardest + ";";
-
             for (int i = 0; i < 3; i++) {
                 PreparedStatement statement = JDBCConnection.getJDBCConnection().prepareStatement(sql[i]);
                 ResultSet rs = statement.executeQuery();
                 while (rs.next()) {
                     MultiChoiceQuest c = new MultiChoiceQuest();
+                    c.setId(rs.getInt("id"));
                     c.setQuest(rs.getString("deBai"));
                     c.setDifficult(rs.getString("doKho"));
                     c.setIdSubject(rs.getInt("idMonHoc"));
@@ -71,6 +73,23 @@ public class ExamDB {
                 }
             }
             exam.setTitle(title + "  - Môn: " + subject.getSubject());
+            String sqlScript = "insert into dethi(idMonHoc, title) values (?,?);";
+            PreparedStatement statement = JDBCConnection.getJDBCConnection().prepareStatement(sqlScript, Statement.RETURN_GENERATED_KEYS);
+            statement.setInt(1, subject.getId());
+            statement.setString(2, subject.getSubject());
+            statement.executeUpdate();
+            ResultSet resultSet = statement.getGeneratedKeys();
+            int key = 0;
+            if (resultSet.next()) {
+                key = resultSet.getInt(1);
+            }
+            for (Question question : exam.getQuestionList()) {
+                sqlScript = "insert into cauHoiTrongDe(idDeThi, idCauHoi) values (?,?)";
+                statement = JDBCConnection.getJDBCConnection().prepareStatement(sqlScript);
+                statement.setInt(1, key);
+                statement.setInt(2, question.getId());
+                statement.executeUpdate();
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -17,6 +17,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -53,14 +54,8 @@ public class DethiController implements Initializable {
         subjectSelection.getItems().addAll(SubjectDB.getData());
         subject.setCellValueFactory(new PropertyValueFactory<>("idSubject"));
         examTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
-
         exams.getItems().addAll(ExamDB.getData());
     }
-
-    public void addDT() {
-
-    }
-
 
     public void chonmonhoc() {
 
@@ -113,4 +108,6 @@ public class DethiController implements Initializable {
 //        exam.getQuestionList().addAll(TracNghiemDB.getQuestion(4, "Đọc Hiểu", 2));
     }
 
+    public void exportExam(MouseEvent mouseEvent) {
+    }
 }

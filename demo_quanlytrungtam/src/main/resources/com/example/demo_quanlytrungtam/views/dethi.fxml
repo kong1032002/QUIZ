@@ -26,7 +26,7 @@
             <Font name="System Italic" size="14.0" />
          </font>
       </Text>
-      <Button fx:id="addDT" layoutX="135.0" layoutY="652.0" mnemonicParsing="false" onAction="#addDT" prefHeight="26.0" prefWidth="108.0" style="-fx-background-color: #328AEA;" text="Thêm Đề Thi" textFill="WHITE" />
+      <Button fx:id="addDT" layoutX="135.0" layoutY="652.0" mnemonicParsing="false" onMouseClicked="#exportExam" prefHeight="26.0" prefWidth="108.0" style="-fx-background-color: #328AEA;" text="Xuất đề thi" textFill="WHITE" />
       <Button fx:id="lamdethi" layoutX="39.0" layoutY="652.0" mnemonicParsing="false" onMouseClicked="#lamdethi" style="-fx-background-color: #328AEA;" text="Làm đề thi" textFill="WHITE" />
       <Button fx:id="deleteDT" layoutX="280.0" layoutY="652.0" mnemonicParsing="false" onAction="#deleteDT" style="-fx-background-color: #328AEA;" text="Xóa" textFill="WHITE" />
       <Line endX="144.0" endY="44.80000305175781" layoutX="831.0" layoutY="36.0" startX="144.0" startY="585.6000366210938" />
