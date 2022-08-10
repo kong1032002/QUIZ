@@ -1,6 +1,7 @@
 package com.example.demo_quanlytrungtam;
 
 import com.example.demo_quanlytrungtam.database.*;
+import com.example.demo_quanlytrungtam.model.Subject;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -20,12 +21,6 @@ public class Main extends Application{
     }
 
     public static void main(String[] args) {
-        launch();
-        System.out.println(StudentDB.getData());
-        System.out.println(TeacherDB.getData());
-        System.out.println(AccountDB.getData());
-        System.out.println(TracNghiemDB.getData());
-        System.out.println(TuLuanDB.getData());
-        System.out.println(SubjectDB.getData());
+        launch();;
     }
 }

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo_quanlytrungtam.controller.export.ExportDethi">
+   <children>
+      <TextField fx:id="tenfile" layoutX="81.0" layoutY="175.0" prefHeight="26.0" prefWidth="182.0" />
+      <TextField fx:id="thumuc" layoutX="81.0" layoutY="226.0" prefHeight="26.0" prefWidth="182.0" />
+      <ComboBox fx:id="dinhdang" layoutX="274.0" layoutY="175.0" prefHeight="26.0" prefWidth="104.0" promptText="Định dạng" />
+      <Button fx:id="chon" layoutX="300.0" layoutY="227.0" mnemonicParsing="false" onAction="#chon" style="-fx-background-color: #4c8bcf;" text="Chọn" textFill="WHITE" />
+      <Button fx:id="save" layoutX="96.0" layoutY="308.0" mnemonicParsing="false" onAction="#save" prefHeight="26.0" prefWidth="82.0" style="-fx-background-color: #4c8bcf;" text="SAVE" textFill="WHITE" />
+      <Button fx:id="cancel" layoutX="233.0" layoutY="308.0" mnemonicParsing="false" onAction="#cancel" prefHeight="26.0" prefWidth="82.0" style="-fx-background-color: #4c8bcf;" text="CANCEL" textFill="WHITE" />
+      <Text layoutX="29.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tên File" />
+      <Text layoutX="29.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thư mục" />
+   </children>
+</AnchorPane>

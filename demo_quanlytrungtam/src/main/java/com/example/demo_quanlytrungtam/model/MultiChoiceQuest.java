@@ -51,11 +51,10 @@ public class MultiChoiceQuest extends Question {
     @Override
     public String toString() {
         return  " Đề Bài:" + quest + "? \n" +
-                ",  A - " + A + "\n" +
-                ",  B - " + B + "\n" +
-                ",  C - " + C + "\n" +
-                ",  D - " + D + "\n" +
-//                ", dapAn='" + answer + '\'' +
+                "   A - " + A + "\n" +
+                "   B - " + B + "\n" +
+                "   C - " + C + "\n" +
+                "   D - " + D + "\n" +
                 "\n";
     }
 }

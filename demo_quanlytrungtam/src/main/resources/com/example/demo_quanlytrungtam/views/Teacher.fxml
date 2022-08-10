@@ -32,7 +32,7 @@
       <Button fx:id="editGV" layoutX="188.0" layoutY="650.0" mnemonicParsing="false" onMouseClicked="#editGV"
               prefHeight="26.0" prefWidth="126.0" style="-fx-background-color: #4CC7E0;" text="Chỉnh sửa"
               textFill="WHITE"/>
-      <Button layoutX="347.0" layoutY="650.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="126.0"
+      <Button layoutX="347.0" layoutY="650.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="126.0" onMouseClicked="#deleteTeacher"
               style="-fx-background-color: #4CC7E0;" text="Xóa giáo viên" textFill="WHITE"/>
       <Button fx:id="home" layoutX="827.0" layoutY="650.0" mnemonicParsing="false" onAction="#gohome"
               prefHeight="26.0" prefWidth="126.0" style="-fx-background-color: #4CC7E0;" text="Cancel"

@@ -49,25 +49,11 @@ public class Lamdethi implements Initializable {
 
     public void ok(MouseEvent mouseEvent) {
         try {
-            Exam exam = ExamDB.createExam(title.getText(), subject.getValue(),
+            ExamDB.createExam(title.getText(), subject.getValue(),
                     Integer.parseInt(easy.getText()),
                     Integer.parseInt(normal.getText()),
                     Integer.parseInt(hard.getText()),
                     Integer.parseInt(hardest.getText()));
-            System.out.println(exam);
-            DirectoryChooser directoryChooser = new DirectoryChooser();
-            Stage stage = new Stage();
-            File file = new File(directoryChooser.showDialog(stage) + "\\" + title.getText() + ".txt");
-            System.out.println(file);
-            if (!file.exists()) {
-                file.createNewFile();
-            }
-            OutputStream outputStream = new FileOutputStream(file);
-            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
-            outputStreamWriter.write(title.getText() + "\n");
-            outputStreamWriter.write(subject.getValue().getSubject() + "\n");
-            outputStreamWriter.write(exam.toString());
-            outputStreamWriter.flush();
             gohome();
         } catch (Exception e) {
             e.printStackTrace();

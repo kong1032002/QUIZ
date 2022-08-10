@@ -82,4 +82,14 @@ public class TracNghiemDB {
         }
         return list;
     }
+
+    public static void removeData(int id) {
+        String sql = "Delete from tracnghiem where id = " + id;
+        try {
+            PreparedStatement statement = JDBCConnection.getJDBCConnection().prepareStatement(sql);
+            statement.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

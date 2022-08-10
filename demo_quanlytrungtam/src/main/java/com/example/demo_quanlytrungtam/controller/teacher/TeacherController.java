@@ -12,6 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -77,5 +78,16 @@ public class TeacherController implements Initializable {
     public void editGV() {
         ForwardScene.forward("editGV.fxml","Học viên",editGV);
 
+    }
+
+    public void deleteTeacher(MouseEvent mouseEvent) {
+        Teacher teacher = table.getSelectionModel().getSelectedItem();
+        TeacherDB.removeData(teacher.getId());
+        refresh();
+    }
+
+    public void refresh() {
+        table.getItems().removeAll(table.getItems());
+        table.getItems().addAll(TeacherDB.getData());
     }
 }

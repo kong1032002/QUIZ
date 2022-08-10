@@ -3,10 +3,8 @@ module com.example.demo_quanlytrungtam {
     requires javafx.fxml;
     requires java.sql;
     requires mysql.connector.java;
-    requires poi.ooxml;
-    requires poi.ooxml.schemas;
-//    requires poi;
-    requires xmlbeans;
+    requires org.apache.poi.ooxml;
+
 
     opens com.example.demo_quanlytrungtam to javafx.fxml;
     exports com.example.demo_quanlytrungtam;
@@ -21,4 +19,6 @@ module com.example.demo_quanlytrungtam {
     opens com.example.demo_quanlytrungtam.controller.question to javafx.fxml;
     exports com.example.demo_quanlytrungtam.controller.dethi;
     opens com.example.demo_quanlytrungtam.controller.dethi to javafx.fxml;
+    exports com.example.demo_quanlytrungtam.controller.export;
+    opens com.example.demo_quanlytrungtam.controller.export to javafx.fxml;
 }

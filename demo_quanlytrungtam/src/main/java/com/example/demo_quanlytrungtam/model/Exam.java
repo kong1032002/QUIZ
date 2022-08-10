@@ -5,9 +5,10 @@ import java.util.List;
 
 public class Exam {
     int idSubject;
+    String subject;
     int id;
     String title;
-    List<Question> questionList = new ArrayList<>();
+    List<MultiChoiceQuest> questionList = new ArrayList<>();
 
     public int getIdSubject() {
         return idSubject;
@@ -33,12 +34,20 @@ public class Exam {
         this.title = title;
     }
 
-    public List<Question> getQuestionList() {
+    public List<MultiChoiceQuest> getQuestionList() {
         return questionList;
     }
 
-    public void setQuestionList(List<Question> questionList) {
+    public void setQuestionList(List<MultiChoiceQuest> questionList) {
         this.questionList = questionList;
+    }
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
     }
 
     @Override

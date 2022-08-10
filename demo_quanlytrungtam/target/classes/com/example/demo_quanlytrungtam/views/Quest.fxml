@@ -20,7 +20,7 @@
       <ComboBox fx:id="subjectSelection" layoutX="39.0" layoutY="29.0" prefWidth="150.0" promptText="Môn học" />
       <Button fx:id="addCH" layoutX="39.0" layoutY="659.0" mnemonicParsing="false" onMouseClicked="#addCH" prefHeight="26.0" prefWidth="165.0" style="-fx-background-color: #1d90c4;" text="Thêm câu hỏi" textFill="#fffcfc" />
       <Button fx:id="editCH" layoutX="255.0" layoutY="659.0" mnemonicParsing="false" onMouseClicked="#editCH" prefHeight="26.0" prefWidth="165.0" style="-fx-background-color: #1d90c4;" text="Chỉnh sửa" textFill="#fffcfc" />
-      <Button layoutX="467.0" layoutY="659.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="165.0" style="-fx-background-color: #1d90c4;" text="Xóa câu hỏi" textFill="#fffcfc" />
+      <Button layoutX="467.0" layoutY="659.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="165.0" style="-fx-background-color: #1d90c4;" text="Xóa câu hỏi" textFill="#fffcfc" onMouseClicked="#deleteQuestion"/>
       <Button fx:id="cancel" layoutX="807.0" layoutY="659.0" mnemonicParsing="false" onMouseClicked="#gohome" prefHeight="26.0" prefWidth="165.0" style="-fx-background-color: #1d90c4;" text="CANCEL" textFill="#fffcfc" />
       <Text fill="#1d90c4" layoutX="425.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DANH SÁCH CÂU HỎI">
          <font>

@@ -16,6 +16,7 @@ public class ExamDB {
 
     public static List<Exam> getData() {
         List<Exam> examList = new ArrayList<>();
+        List<Subject> subjects = SubjectDB.getData();
         String sql = "select * from dethi;";
         try {
             PreparedStatement statement = JDBCConnection.getJDBCConnection().prepareStatement(sql);
@@ -26,6 +27,11 @@ public class ExamDB {
                 exam.setIdSubject(resultSet.getInt("idMonHoc"));
                 exam.setTitle(resultSet.getString("title"));
                 examList.add(exam);
+                for (Subject subject : subjects) {
+                    if (subject.getId() == exam.getIdSubject()) {
+                        exam.setSubject(subject.getSubject());
+                    }
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -44,6 +50,35 @@ public class ExamDB {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public static Exam getExam(int id) {
+        Exam exam = new Exam();
+        String sql = "select dethi.id as idDeThi, dethi.title ,tracnghiem.* from tracnghiem, cauhoitrongde, dethi where cauhoitrongde.idDeThi = dethi.id and tracnghiem.id = cauhoitrongde.idCauHoi and  cauhoitrongde.idDeThi = " + id + " ;";
+        try {
+            PreparedStatement statement = JDBCConnection.getJDBCConnection().prepareStatement(sql);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                if (exam.getId() == 0 || exam.getTitle() == "") {
+                    exam.setId(resultSet.getInt("idDeThi"));
+                    exam.setTitle(resultSet.getString("title"));
+                }
+                MultiChoiceQuest multiChoiceQuest = new MultiChoiceQuest();
+                multiChoiceQuest.setId(resultSet.getInt("id"));
+                multiChoiceQuest.setIdSubject(resultSet.getInt("idMonHoc"));
+                multiChoiceQuest.setDifficult(resultSet.getString("doKho"));
+                multiChoiceQuest.setQuest(resultSet.getString("deBai"));
+                multiChoiceQuest.setA(resultSet.getString("A"));
+                multiChoiceQuest.setB(resultSet.getString("B"));
+                multiChoiceQuest.setC(resultSet.getString("C"));
+                multiChoiceQuest.setD(resultSet.getString("D"));
+                multiChoiceQuest.setAnswer(resultSet.getString("dapAn"));
+                exam.getQuestionList().add(multiChoiceQuest);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return exam;
     }
 
     public static Exam createExam(String title, Subject subject,int easy, int normal, int hard, int hardest) {
@@ -76,7 +111,7 @@ public class ExamDB {
             String sqlScript = "insert into dethi(idMonHoc, title) values (?,?);";
             PreparedStatement statement = JDBCConnection.getJDBCConnection().prepareStatement(sqlScript, Statement.RETURN_GENERATED_KEYS);
             statement.setInt(1, subject.getId());
-            statement.setString(2, subject.getSubject());
+            statement.setString(2, title);
             statement.executeUpdate();
             ResultSet resultSet = statement.getGeneratedKeys();
             int key = 0;
@@ -94,5 +129,18 @@ public class ExamDB {
             e.printStackTrace();
         }
         return exam;
+    }
+
+    public static void removeData(int id) {
+        String sql2 = "Delete from cauhoitrongde where idDeThi = " + id;
+        String sql1 = "Delete from dethi where id = " + id;
+        try {
+            PreparedStatement statement = connection.prepareStatement(sql2);
+            statement.executeUpdate();
+            statement = connection.prepareStatement(sql1);
+            statement.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

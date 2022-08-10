@@ -16,8 +16,6 @@ public class CreateExam {
     protected XWPFDocument document = new XWPFDocument();
 
     public XWPFDocument createHeader(){
-
-
         //Bước 2: Tạo tiêu đề bài viết
         XWPFParagraph titleGraph = document.createParagraph();
 

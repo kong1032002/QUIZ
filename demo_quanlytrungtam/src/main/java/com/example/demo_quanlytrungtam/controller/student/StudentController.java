@@ -91,7 +91,6 @@ public class StudentController implements Initializable {
 
     public void deleteStudent(MouseEvent mouseEvent) {
         Student student = table.getSelectionModel().getSelectedItem();
-        System.out.println(student);
         StudentDB.removeData(student.getId());
         refresh();
     }

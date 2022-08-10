@@ -13,6 +13,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -57,4 +58,14 @@ public class QuestionController implements Initializable {
         ForwardScene.forward("viewMain.fxml", "Main", cancel);
     }
 
+    public void deleteQuestion(MouseEvent mouseEvent) {
+        MultiChoiceQuest multiChoiceQuest = quests.getSelectionModel().getSelectedItem();
+        TracNghiemDB.removeData(multiChoiceQuest.getId());
+        refresh();
+    }
+
+    public void refresh() {
+        quests.getItems().removeAll(quests.getItems());
+        quests.getItems().addAll(TracNghiemDB.getData());
+    }
 }

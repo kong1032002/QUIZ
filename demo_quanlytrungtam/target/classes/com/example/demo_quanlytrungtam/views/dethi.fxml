@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo_quanlytrungtam.controller.dethi.DethiController">
+<AnchorPane prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo_quanlytrungtam.controller.dethi.DethiController">
    <AnchorPane layoutX="-4.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0">
       <Text fill="#1015b7" layoutX="65.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Danh Sách Đề Thi">
          <font>
@@ -13,7 +18,7 @@
          </font>
       </Text>
       <ScrollPane layoutX="39.0" layoutY="61.0" prefHeight="564.0" prefWidth="922.0" style="-fx-border-color: blue;">
-         <TableView fx:id="exams" prefHeight="558.0" prefWidth="917.0">
+         <TableView fx:id="table" prefHeight="558.0" prefWidth="917.0">
             <columns>
                <TableColumn fx:id="subject" prefWidth="126.39999616146088" text="Môn học" />
                <TableColumn fx:id="examTitle" prefWidth="789.5999221801758" text="Đề thi" />
@@ -26,9 +31,9 @@
             <Font name="System Italic" size="14.0" />
          </font>
       </Text>
-      <Button fx:id="addDT" layoutX="135.0" layoutY="652.0" mnemonicParsing="false" onAction="#addDT" prefHeight="26.0" prefWidth="108.0" style="-fx-background-color: #328AEA;" text="Thêm Đề Thi" textFill="WHITE" />
+      <Button fx:id="addDT" layoutX="135.0" layoutY="652.0" mnemonicParsing="false" onMouseClicked="#exportDT" prefHeight="26.0" prefWidth="108.0" style="-fx-background-color: #328AEA;" text="Xuất đề thi" textFill="WHITE" />
       <Button fx:id="lamdethi" layoutX="39.0" layoutY="652.0" mnemonicParsing="false" onMouseClicked="#lamdethi" style="-fx-background-color: #328AEA;" text="Làm đề thi" textFill="WHITE" />
-      <Button fx:id="deleteDT" layoutX="280.0" layoutY="652.0" mnemonicParsing="false" onAction="#deleteDT" style="-fx-background-color: #328AEA;" text="Xóa" textFill="WHITE" />
+      <Button fx:id="deleteDT" layoutX="280.0" layoutY="652.0" mnemonicParsing="false" onAction="#deleteDT" style="-fx-background-color: #328AEA;" text="Xóa" onMouseClicked="#deleteExam" textFill="WHITE" />
       <Line endX="144.0" endY="44.80000305175781" layoutX="831.0" layoutY="36.0" startX="144.0" startY="585.6000366210938" />
       <Line endX="96.0" layoutX="852.0" layoutY="41.0" startX="-318.39996337890625" />
       <Line endX="-177.59999084472656" endY="-244.79998779296875" layoutX="200.0" layoutY="320.0" startX="-177.59999084472656" startY="299.20001220703125" />
