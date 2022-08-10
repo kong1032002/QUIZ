@@ -6,7 +6,7 @@ public class MultiChoiceQuest extends Question {
     private String B;
     private String C;
     private String D;
-    private String dapAn;
+    private String answer;
 
     public String getA() {
         return A;
@@ -40,28 +40,22 @@ public class MultiChoiceQuest extends Question {
         this.D = D;
     }
 
-    public String getDapAn() {
-        return dapAn;
+    public String getAnswer() {
+        return answer;
     }
 
-    public void setDapAn(String dapAn) {
-        this.dapAn = dapAn;
+    public void setAnswer(String answer) {
+        this.answer = answer;
     }
 
     @Override
     public String toString() {
-        return "TracNghiem{" +
-                "id=" + id +
-                ", mon='" + subject + '\'' +
-                ", chuong=" + chapter +
-                ", deBai='" + quest + '\'' +
-                ", doKho=" + difficult +
-                ", userID=" + userID +
-                ", A='" + A + '\'' +
-                ", B='" + B + '\'' +
-                ", C='" + C + '\'' +
-                ", D='" + D + '\'' +
-                ", dapAn='" + dapAn + '\'' +
-                '}';
+        return  " Đề Bài:" + quest + "? \n" +
+                ",  A - " + A + "\n" +
+                ",  B - " + B + "\n" +
+                ",  C - " + C + "\n" +
+                ",  D - " + D + "\n" +
+//                ", dapAn='" + answer + '\'' +
+                "\n";
     }
 }

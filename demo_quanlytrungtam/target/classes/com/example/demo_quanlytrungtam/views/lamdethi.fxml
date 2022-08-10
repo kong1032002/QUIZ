@@ -1,29 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Pagination?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-
-<AnchorPane prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: grow;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo_quanlytrungtam.controller.Lamdethi">
-   <children>
-      <AnchorPane layoutX="-1.0" layoutY="1.0" prefHeight="700.0" prefWidth="782.0" style="-fx-background-color: #C9C9C9;">
-         <children>
-            <Pagination layoutX="17.0" layoutY="70.0" prefHeight="615.0" prefWidth="736.0" style="-fx-background-color: white;" />
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="781.0" layoutY="1.0" prefHeight="700.0" prefWidth="218.0" style="-fx-background-color: #E4E4E4;">
-         <children>
-            <TableView layoutX="11.0" layoutY="68.0" prefHeight="615.0" prefWidth="195.0">
-              <columns>
-                <TableColumn prefWidth="47.199951171875" text="Câu" />
-                <TableColumn prefWidth="49.5999755859375" text="Đáp Án" />
-                  <TableColumn prefWidth="47.199951171875" text="Câu" />
-                  <TableColumn prefWidth="49.5999755859375" text="Đáp Án" />
-              </columns>
-            </TableView>
-         </children>
-      </AnchorPane>
-   </children>
+<AnchorPane prefHeight="640.0" prefWidth="1000.0" style="-fx-background-color: #3ab3e0;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo_quanlytrungtam.controller.dethi.Lamdethi">
+   <TextField fx:id="title" layoutX="392.0" layoutY="175.0" prefHeight="68.0" prefWidth="290.0" />
+   <VBox layoutX="392.0" layoutY="263.0" prefHeight="104.0" prefWidth="290.0">
+      <TextField fx:id="easy" promptText="A" />
+      <TextField fx:id="normal" promptText="B" />
+      <TextField fx:id="hard" promptText="C" />
+      <TextField fx:id="hardest" promptText="D" />
+   </VBox>
+   <Text layoutX="292.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tiêu đề" wrappingWidth="59.25567626953125">
+      <font>
+         <Font name="System Italic" size="14.0" />
+      </font>
+   </Text>
+   <Text layoutX="292.0" layoutY="278.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nhận Biết">
+      <font>
+         <Font name="System Italic" size="14.0" />
+      </font>
+   </Text>
+   <Button fx:id="ok" layoutX="363.0" layoutY="446.0" mnemonicParsing="false" onMouseClicked="#ok" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #4b6cc9;" text="OK" textFill="#d1d1d1" />
+   <Button fx:id="cancel" layoutX="538.0" layoutY="446.0" mnemonicParsing="false" onMouseClicked="#cancel" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #4b6cc9;" text="CANCEL" textFill="#d1d1d1" />
+   <Text fill="#3277c2" layoutX="383.0" layoutY="425.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Lưu ý: Một câu hỏi chỉ có một đáp án đúng" textAlignment="CENTER">
+      <font>
+         <Font name="System Bold Italic" size="12.0" />
+      </font>
+   </Text>
+   <ComboBox fx:id="subject" layoutX="393.0" layoutY="84.0" prefHeight="26.0" prefWidth="290.0" promptText="Môn Học" />
+   <Text layoutX="291.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thông hiểu">
+      <font>
+         <Font name="System Italic" size="14.0" />
+      </font>
+   </Text>
+   <Text layoutX="291.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vận Dụng">
+      <font>
+         <Font name="System Italic" size="14.0" />
+      </font>
+   </Text>
+   <Text layoutX="291.0" layoutY="362.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vận dụng cao">
+      <font>
+         <Font name="System Italic" size="14.0" />
+      </font>
+   </Text>
 </AnchorPane>

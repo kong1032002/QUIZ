@@ -15,8 +15,7 @@ public class TuLuan extends Question {
     public String toString() {
         return "TuLuan{" +
                 "id=" + id +
-                ", subject='" + subject + '\'' +
-                ", chapter=" + chapter +
+                ", subject='" + idSubject + '\'' +
                 ", quest='" + quest + '\'' +
                 ", difficult=" + difficult +
                 ", userID=" + userID +

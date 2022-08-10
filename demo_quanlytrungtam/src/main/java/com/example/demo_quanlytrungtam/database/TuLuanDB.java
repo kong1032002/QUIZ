@@ -20,10 +20,8 @@ public class TuLuanDB {
             ResultSet rs = p.executeQuery();
             while(rs.next()) {
                 TuLuan c = new TuLuan();
-                c.setSubject(rs.getString("mon"));
-                c.setChapter(rs.getInt("chuong"));
                 c.setQuest(rs.getString("deBai"));
-                c.setDifficult(rs.getInt("doKho"));
+                c.setDifficult(rs.getString("doKho"));
                 c.setGoiY(rs.getString("goiY"));
                 list.add(c);
             }
@@ -35,14 +33,13 @@ public class TuLuanDB {
 
     public static void pushData(TuLuan quest){
         Connection conn = JDBCConnection.getJDBCConnection();
-        String sql = "insert into tuluan(mon, chuong , deBai, doKho, goiY)\n" +
-                "values (?, ?, ?, ?, ?);";
+        String sql = "insert into tuluan(mon, deBai, doKho, goiY)\n" +
+                "values (?, ?, ?, ?);";
         try {
             PreparedStatement p = conn.prepareStatement(sql);
-            p.setString(1, quest.getSubject());
-            p.setInt(2, quest.getChapter());
+            p.setInt(1, quest.getIdSubject());
             p.setString(3, quest.getQuest());
-            p.setInt(4, quest.getDifficult());
+            p.setString(4, quest.getDifficult());
             p.setString(5, quest.getGoiY());
             p.executeUpdate();
         } catch (SQLException e) {

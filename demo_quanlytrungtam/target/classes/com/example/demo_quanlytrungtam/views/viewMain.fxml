@@ -54,10 +54,7 @@
          </children>
       </AnchorPane>
       <Button fx:id="dethi" layoutX="14.0" layoutY="106.0" mnemonicParsing="false" onMouseClicked="#gotodethi" prefHeight="26.0" prefWidth="215.0" style="-fx-background-color: #051DAF;" text="Ngân hàng đề thi" textFill="WHITE" />
-      <Button fx:id="decuong" layoutX="14.0" layoutY="152.0" mnemonicParsing="false" onMouseClicked="#gotodecuong" prefHeight="26.0" prefWidth="215.0" style="-fx-background-color: #051DAF;" text="Tổng hợp đề cương" textFill="WHITE" />
-      <Button fx:id="hocvien" layoutX="14.0" layoutY="198.0" mnemonicParsing="false" onMouseClicked="#gotohocvien" prefHeight="26.0" prefWidth="215.0" style="-fx-background-color: #051DAF;" text="Học viên" textFill="WHITE" />
-      <Button fx:id="giaovien" layoutX="14.0" layoutY="244.0" mnemonicParsing="false" onMouseClicked="#gotogiaovien" prefHeight="26.0" prefWidth="215.0" style="-fx-background-color: #051DAF;" text="Giáo viên" textFill="WHITE" />
-      <Button fx:id="hdsd" layoutX="14.0" layoutY="337.0" mnemonicParsing="false" onMouseClicked="#gotohdsd" prefHeight="26.0" prefWidth="215.0" style="-fx-background-color: #051DAF;" text="Hướng dẫn sử dụng" textFill="WHITE" />
-      <Button fx:id="thongke" layoutX="14.0" layoutY="291.0" mnemonicParsing="false" onMouseClicked="#gotothongke" prefHeight="26.0" prefWidth="215.0" style="-fx-background-color: #051DAF;" text="Thống kê" textFill="WHITE" />
+      <Button fx:id="hocvien" layoutX="14.0" layoutY="151.0" mnemonicParsing="false" onMouseClicked="#gotohocvien" prefHeight="26.0" prefWidth="215.0" style="-fx-background-color: #051DAF;" text="Học viên" textFill="WHITE" />
+      <Button fx:id="giaovien" layoutX="14.0" layoutY="196.0" mnemonicParsing="false" onMouseClicked="#gotogiaovien" prefHeight="26.0" prefWidth="215.0" style="-fx-background-color: #051DAF;" text="Giáo viên" textFill="WHITE" />
    </children>
 </AnchorPane>

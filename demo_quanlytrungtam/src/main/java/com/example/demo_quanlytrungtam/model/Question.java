@@ -2,18 +2,18 @@ package com.example.demo_quanlytrungtam.model;
 
 public abstract class Question {
     protected int id;
-    protected String subject;
-    protected int chapter;
+    protected int idSubject;
     protected String quest;
-    protected int difficult;
+    protected String difficult;
     protected int userID;
+    protected boolean active;
 
-    public String getSubject() {
-        return subject;
+    public int getIdSubject() {
+        return idSubject;
     }
 
-    public void setSubject(String subject) {
-        this.subject = subject;
+    public void setIdSubject(int idSubject) {
+        this.idSubject = idSubject;
     }
 
     public int getId() {
@@ -24,14 +24,6 @@ public abstract class Question {
         this.id = id;
     }
 
-    public int getChapter() {
-        return chapter;
-    }
-
-    public void setChapter(int chapter) {
-        this.chapter = chapter;
-    }
-
     public String getQuest() {
         return quest;
     }
@@ -40,11 +32,11 @@ public abstract class Question {
         this.quest = quest;
     }
 
-    public int getDifficult() {
+    public String getDifficult() {
         return difficult;
     }
 
-    public void setDifficult(int difficult) {
+    public void setDifficult(String difficult) {
         this.difficult = difficult;
     }
 

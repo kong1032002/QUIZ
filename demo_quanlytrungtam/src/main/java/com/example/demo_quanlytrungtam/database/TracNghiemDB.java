@@ -20,15 +20,14 @@ public class TracNghiemDB {
             ResultSet rs = p.executeQuery();
             while(rs.next()) {
                 MultiChoiceQuest c = new MultiChoiceQuest();
-                c.setSubject(rs.getString("mon"));
-                c.setChapter(rs.getInt("chuong"));
                 c.setQuest(rs.getString("deBai"));
-                c.setDifficult(rs.getInt("doKho"));
+                c.setDifficult(rs.getString("doKho"));
+                c.setIdSubject(rs.getInt("idMonHoc"));
                 c.setA(rs.getString("A"));
                 c.setB(rs.getString("B"));
                 c.setC(rs.getString("C"));
                 c.setD(rs.getString("D"));
-                c.setDapAn(rs.getString("dapAn"));
+                c.setAnswer(rs.getString("dapAn"));
                 list.add(c);
             }
         } catch (SQLException e) {
@@ -39,22 +38,48 @@ public class TracNghiemDB {
 
     public static void pushData(MultiChoiceQuest quest){
         Connection conn = JDBCConnection.getJDBCConnection();
-        String sql = "insert into tracnghiem(mon, chuong, deBai, doKho, A, B, C, D, dapAn) \n"
-                + "values (?, ?, ?, ?, ?, ?, ?, ?, ?);";
+        String sql = "insert into tracnghiem(idMonHoc, deBai, doKho, A, B, C, D, dapAn) \n"
+                + "values (?, ?, ?, ?, ?, ?, ?, ?);";
         try {
             PreparedStatement p = conn.prepareStatement(sql);
-            p.setString(1, quest.getSubject());
-            p.setInt(2, quest.getChapter());
-            p.setString(3, quest.getQuest());
-            p.setInt(4, quest.getDifficult());
-            p.setString(5, quest.getA());
-            p.setString(6, quest.getB());
-            p.setString(7, quest.getC());
-            p.setString(8, quest.getD());
-            p.setString(9, quest.getDapAn());
+            p.setInt(1, quest.getIdSubject());
+            p.setString(2, quest.getQuest());
+            p.setString(3, quest.getDifficult());
+            p.setString(4, quest.getA());
+            p.setString(5, quest.getB());
+            p.setString(6, quest.getC());
+            p.setString(7, quest.getD());
+            p.setString(8, quest.getAnswer());
             p.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public static List<MultiChoiceQuest> getQuestion(int idSubject,String difficult, int limit) {
+        List<MultiChoiceQuest> list = new ArrayList<>();
+        String sql = "select * from tracnghiem where doKho = '" + difficult + "' and idMonHoc = " + idSubject + " order by rand() limit " + limit + ";";
+        System.out.println(sql);
+        Connection conn = JDBCConnection.getJDBCConnection();
+        try {
+            assert conn != null;
+            PreparedStatement p = conn.prepareStatement(sql);
+            ResultSet rs = p.executeQuery();
+            while(rs.next()) {
+                MultiChoiceQuest c = new MultiChoiceQuest();
+                c.setQuest(rs.getString("deBai"));
+                c.setDifficult(rs.getString("doKho"));
+                c.setIdSubject(rs.getInt("idMonHoc"));
+                c.setA(rs.getString("A"));
+                c.setB(rs.getString("B"));
+                c.setC(rs.getString("C"));
+                c.setD(rs.getString("D"));
+                c.setAnswer(rs.getString("dapAn"));
+                list.add(c);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return list;
     }
 }

@@ -39,6 +39,20 @@ public class Register {
         return true;
     }
 
+    public void login() {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/example/demo_quanlytrungtam/views/viewLogin.fxml"));
+        Scene scene = null;
+        try {
+            scene = new Scene(fxmlLoader.load(), 600, 400);
+            Stage stage = (Stage) signup.getScene().getWindow();
+            stage.setTitle("Đăng nhập");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public void register() {
         if(username.getText() == "" || pass.getText() == "" || password.getText() == "" ||
             name.getText() == "" || email.getText() == "" || phone.getText() == "") {

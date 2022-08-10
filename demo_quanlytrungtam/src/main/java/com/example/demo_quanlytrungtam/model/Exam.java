@@ -4,10 +4,33 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Exam {
-    List<Question> questionList;
+    int idSubject;
+    int id;
+    String title;
+    List<Question> questionList = new ArrayList<>();
 
-    public Exam() {
-        questionList = new ArrayList<>();
+    public int getIdSubject() {
+        return idSubject;
+    }
+
+    public void setIdSubject(int idSubject) {
+        this.idSubject = idSubject;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public List<Question> getQuestionList() {
@@ -18,11 +41,9 @@ public class Exam {
         this.questionList = questionList;
     }
 
-    public void addQuestion(Question question) {
-        questionList.add(question);
-    }
-
-    public void removeQuestion(Question question) {
-        questionList.remove(question);
+    @Override
+    public String toString() {
+        return title + "\n"
+                + questionList.toString();
     }
 }

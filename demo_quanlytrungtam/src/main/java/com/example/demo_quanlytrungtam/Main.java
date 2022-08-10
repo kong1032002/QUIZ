@@ -26,5 +26,6 @@ public class Main extends Application{
         System.out.println(AccountDB.getData());
         System.out.println(TracNghiemDB.getData());
         System.out.println(TuLuanDB.getData());
+        System.out.println(SubjectDB.getData());
     }
 }

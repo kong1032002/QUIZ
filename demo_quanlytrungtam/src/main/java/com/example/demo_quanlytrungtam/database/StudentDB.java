@@ -15,7 +15,7 @@ public class StudentDB implements EditData {
 
     public static List<Student> getData() {
         List<Student> students = new ArrayList<>();
-        String sql = "select * from hocsinh";
+        String sql = "select * from hocsinh;";
         try {
             PreparedStatement statement = connection.prepareStatement(sql);
             ResultSet resultSet = statement.executeQuery();

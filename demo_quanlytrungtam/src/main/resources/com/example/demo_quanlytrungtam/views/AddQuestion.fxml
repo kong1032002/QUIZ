@@ -1,44 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo_quanlytrungtam.controller.AddQuestion">
-   <TextField fx:id="subject" layoutX="86.0" layoutY="38.0" prefHeight="26.0" prefWidth="290.0" />
-   <TextField fx:id="question" layoutX="85.0" layoutY="79.0" prefHeight="68.0" prefWidth="290.0" />
-   <VBox layoutX="85.0" layoutY="167.0" prefHeight="104.0" prefWidth="290.0">
+<AnchorPane prefHeight="640.0" prefWidth="1000.0" style="-fx-background-color: #3ab3e0;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo_quanlytrungtam.controller.question.AddQuestion">
+   <TextField fx:id="question" layoutX="392.0" layoutY="175.0" prefHeight="68.0" prefWidth="290.0" />
+   <VBox layoutX="392.0" layoutY="263.0" prefHeight="104.0" prefWidth="290.0">
       <TextField fx:id="firstOption" promptText="A" />
       <TextField fx:id="secondOption" promptText="B" />
       <TextField fx:id="thirdOption" promptText="C" />
       <TextField fx:id="fourthOption" promptText="D" />
    </VBox>
-   <Text layoutX="14.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Môn học">
+   <Text layoutX="320.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Môn học">
       <font>
          <Font name="System Italic" size="14.0" />
       </font>
    </Text>
-   <Text layoutX="10.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nội dung câu hỏi" wrappingWidth="59.25567626953125">
+   <Text layoutX="317.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nội dung câu hỏi" wrappingWidth="59.25567626953125">
       <font>
          <Font name="System Italic" size="14.0" />
       </font>
    </Text>
-   <Text layoutX="17.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Đáp án">
+   <Text layoutX="324.0" layoutY="278.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Đáp án">
       <font>
          <Font name="System Italic" size="14.0" />
       </font>
    </Text>
-   <TextField fx:id="answer" layoutX="106.0" layoutY="281.0" prefHeight="26.0" prefWidth="270.0" />
-   <Text layoutX="10.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Đáp án đúng" textAlignment="CENTER" wrappingWidth="86.4556884765625">
+   <TextField fx:id="answer" layoutX="413.0" layoutY="377.0" prefHeight="26.0" prefWidth="270.0" />
+   <Text layoutX="317.0" layoutY="395.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Đáp án đúng" textAlignment="CENTER" wrappingWidth="86.4556884765625">
       <font>
          <Font name="System Italic" size="14.0" />
       </font>
    </Text>
-   <Button layoutX="56.0" layoutY="350.0" mnemonicParsing="false" onMouseClicked="#ok" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #4b6cc9;" text="OK" textFill="#d1d1d1" />
-   <Button layoutX="231.0" layoutY="350.0" mnemonicParsing="false" onMouseClicked="#cancel" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #4b6cc9;" text="CANCEL" textFill="#d1d1d1" />
-   <Text fill="#3277c2" layoutX="76.0" layoutY="329.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Lưu ý: Một câu hỏi chỉ có một đáp án đúng" textAlignment="CENTER">
+   <Button fx:id="ok" layoutX="363.0" layoutY="446.0" mnemonicParsing="false" onAction="#ok" onMouseClicked="#ok" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #4b6cc9;" text="OK" textFill="#d1d1d1" />
+   <Button fx:id="cancel" layoutX="538.0" layoutY="446.0" mnemonicParsing="false" onAction="#cancel" onMouseClicked="#cancel" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #4b6cc9;" text="CANCEL" textFill="#d1d1d1" />
+   <Text fill="#3277c2" layoutX="383.0" layoutY="425.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Lưu ý: Một câu hỏi chỉ có một đáp án đúng" textAlignment="CENTER">
       <font>
          <Font name="System Bold Italic" size="12.0" />
       </font>
    </Text>
+   <ComboBox fx:id="difficultSelection" layoutX="392.0" layoutY="131.0" prefHeight="26.0" prefWidth="290.0" promptText="Độ khó" />
+   <ComboBox fx:id="subject" layoutX="393.0" layoutY="84.0" prefHeight="26.0" prefWidth="290.0" promptText="Môn" />
 </AnchorPane>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="640.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo_quanlytrungtam.controller.student.EditStudent">
+   <children>
+      <AnchorPane prefHeight="640.0" prefWidth="1000.0">
+         <children>
+            <TextField layoutX="302.0" layoutY="141.0" prefHeight="26.0" prefWidth="183.0" />
+            <TextField fx:id="firstname" layoutX="302.0" layoutY="204.0" prefHeight="26.0" prefWidth="183.0" />
+            <TextField fx:id="parentPhoneNumber" layoutX="594.0" layoutY="334.0" prefHeight="26.0" prefWidth="183.0" />
+            <TextField fx:id="mother" layoutX="594.0" layoutY="270.0" prefHeight="26.0" prefWidth="183.0" />
+            <TextField fx:id="father" layoutX="594.0" layoutY="204.0" prefHeight="26.0" prefWidth="183.0" />
+            <TextField fx:id="email" layoutX="594.0" layoutY="141.0" prefHeight="26.0" prefWidth="183.0" />
+            <TextField fx:id="lastname" layoutX="302.0" layoutY="270.0" prefHeight="26.0" prefWidth="183.0" />
+            <TextField fx:id="phoneNumber" layoutX="302.0" layoutY="334.0" prefHeight="26.0" prefWidth="183.0" />
+            <ComboBox fx:id="gender" layoutX="302.0" layoutY="395.0" prefHeight="26.0" prefWidth="183.0" promptText="Giới tính" />
+            <DatePicker fx:id="birthday" layoutX="594.0" layoutY="395.0" prefHeight="26.0" prefWidth="183.0" promptText="Ngày sinh" />
+            <Text layoutX="197.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Căn cước công dân" />
+            <Text layoutX="248.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tên" />
+            <Text layoutX="227.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Họ tên đệm" />
+            <Text layoutX="223.0" layoutY="352.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số điện thoại" />
+            <Text layoutX="525.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gmail" />
+            <Text layoutX="513.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Họ tên Bố" />
+            <Text layoutX="512.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Họ tên Mẹ" />
+            <Text layoutX="505.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số điện thoại phụ huynh" textAlignment="CENTER" wrappingWidth="69.919921875" />
+            <Text layoutX="513.0" layoutY="413.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ngày sinh" />
+            <Button layoutX="314.0" layoutY="525.0" mnemonicParsing="false" onMouseClicked="#ok" prefHeight="26.0" prefWidth="142.0" style="-fx-background-color: #3769d4;" text="OK" textFill="#fffbfb" />
+            <Button fx:id="cancel" layoutX="594.0" layoutY="525.0" mnemonicParsing="false" onMouseClicked="#gohome" prefHeight="26.0" prefWidth="142.0" style="-fx-background-color: #3769d4;" text="CANCEL" textFill="#fffbfb" />
+            <Text layoutX="231.0" layoutY="413.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Giới tính" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
